@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[Swift怎么通过类名字符串来创建一个类]]></title>
-      <url>%2F2016%2F07%2F20%2FiOS%2FSwift%E6%80%8E%E4%B9%88%E9%80%9A%E8%BF%87%E7%B1%BB%E5%90%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%A5%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%B1%BB%2F</url>
-      <content type="text"><![CDATA[OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]guard ((namespace as? String) != nil) else&#123;return &#125;let modelClass : AnyClass? = NSClassFromString((namespace as? String)!+&quot;.&quot;+modelClassStr)let baseModel = modelClass?.alloc()]]></content>
+      <title><![CDATA[page]]></title>
+      <url>%2F2017%2F03%2F17%2Fpage%2F</url>
+      <content type="text"></content>
     </entry>
 
     
