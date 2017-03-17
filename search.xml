@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title></title>
-      <url>%2F2017%2F03%2F17%2FiOS%2Foc%E4%B8%AD%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E9%80%9A%E8%BF%87%E7%B1%BB%E5%90%8D%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E5%AF%B9%E5%BA%94%E7%9A%84%E7%B1%BB%E6%9D%A5%E6%93%8D%E4%BD%9C%2C%E4%BD%86%E6%98%AFswift%E4%B8%AD%E5%BF%85%E9%A1%BB%E7%94%A8%E5%88%B0%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%2C%E4%B9%9F%E5%B0%B1%E6%98%AF%E8%AF%B4swift%E4%B8%AD%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E6%96%B9%E5%BC%8F%E4%B8%BA%2F</url>
-      <content type="text"><![CDATA[title: Swift怎么通过类名字符串来创建一个类 date: 2016-07-20 11:26:00 # 这个时间就是本篇文章创建时间 ^_^. 可以自定的。 categories: # 这里写的分类会自动汇集到 categories 页面上，分类可以多级 iOS tags: # 这里写的标签会自动汇集到 tags 页面上 iOS ##OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]guard ((namespace as? String) != nil) else&#123;return &#125;let modelClass : AnyClass? = NSClassFromString((namespace as? String)!+&quot;.&quot;+modelClassStr)let baseModel = modelClass?.alloc()]]></content>
+      <title><![CDATA[Swift怎么通过类名字符串来创建一个类]]></title>
+      <url>%2F2016%2F07%2F20%2FiOS%2FSwift%E6%80%8E%E4%B9%88%E9%80%9A%E8%BF%87%E7%B1%BB%E5%90%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9D%A5%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%B1%BB%2F</url>
+      <content type="text"><![CDATA[##OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]guard ((namespace as? String) != nil) else&#123;return &#125;let modelClass : AnyClass? = NSClassFromString((namespace as? String)!+&quot;.&quot;+modelClassStr)let baseModel = modelClass?.alloc()]]></content>
     </entry>
 
     
