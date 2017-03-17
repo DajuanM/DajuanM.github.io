@@ -87,16 +87,16 @@
 
 
 
-<meta name="description" content="##OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != ni">
+<meta name="description" content="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != nil)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift怎么通过类名字符串来创建一个类">
 <meta property="og:url" content="http://yoursite.com/2016/07/20/iOS/Swift怎么通过类名字符串来创建一个类/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
-<meta property="og:description" content="##OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != ni">
-<meta property="og:updated_time" content="2017-03-17T07:08:20.000Z">
+<meta property="og:description" content="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != nil)">
+<meta property="og:updated_time" content="2017-03-17T07:13:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift怎么通过类名字符串来创建一个类">
-<meta name="twitter:description" content="##OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != ni">
+<meta name="twitter:description" content="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != nil)">
 
 
 
@@ -368,8 +368,7 @@
       
 
       
-        <p>##OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]</div><div class="line"></div><div class="line">guard ((namespace as? String) != nil) else&#123;</div><div class="line"></div><div class="line">return </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">let modelClass : AnyClass? = NSClassFromString((namespace as? String)!+&quot;.&quot;+modelClassStr)</div><div class="line"></div><div class="line">let baseModel  = modelClass?.alloc()</div></pre></td></tr></table></figure></p>
-
+        <h2 id="OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为"><a href="#OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为" class="headerlink" title="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为"></a>OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]</div><div class="line"></div><div class="line">guard ((namespace as? String) != nil) else&#123;</div><div class="line"></div><div class="line">return </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">let modelClass : AnyClass? = NSClassFromString((namespace as? String)!+&quot;.&quot;+modelClassStr)</div><div class="line"></div><div class="line">let baseModel  = modelClass?.alloc()</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -487,8 +486,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/avatar.jpeg"
@@ -575,6 +583,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为"><span class="nav-number">1.</span> <span class="nav-text">OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
