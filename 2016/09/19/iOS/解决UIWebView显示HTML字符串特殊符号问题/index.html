@@ -87,25 +87,34 @@
 
 
 
-<meta name="description" content="做项目时后台传入的HTML字符串本来是1&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/p&amp;gt;&amp;lt;/strong&amp;gt;
-结果被转码成了1&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;
-加载到webView显示会有问题，解决办法:
-1234567891011121314151617181920">
+<meta name="description" content="做项目时后台传入的HTML字符串本来是
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/p&amp;gt;&amp;lt;/strong&amp;gt;
+结果被转码成了
+123```加载到webView显示会有问题，解决办法:
+
+(NSString *)stringByDecodingXMLEntities {
+  NSUInteger myLength = [self length];  N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决UIWebView显示HTML字符串特殊符号问题">
 <meta property="og:url" content="http://yoursite.com/2016/09/19/iOS/解决UIWebView显示HTML字符串特殊符号问题/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
-<meta property="og:description" content="做项目时后台传入的HTML字符串本来是1&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/p&amp;gt;&amp;lt;/strong&amp;gt;
-结果被转码成了1&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;
-加载到webView显示会有问题，解决办法:
-1234567891011121314151617181920">
-<meta property="og:updated_time" content="2017-03-20T06:42:32.000Z">
+<meta property="og:description" content="做项目时后台传入的HTML字符串本来是
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/p&amp;gt;&amp;lt;/strong&amp;gt;
+结果被转码成了
+123```加载到webView显示会有问题，解决办法:
+
+(NSString *)stringByDecodingXMLEntities {
+  NSUInteger myLength = [self length];  N">
+<meta property="og:updated_time" content="2017-03-20T06:46:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决UIWebView显示HTML字符串特殊符号问题">
-<meta name="twitter:description" content="做项目时后台传入的HTML字符串本来是1&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/p&amp;gt;&amp;lt;/strong&amp;gt;
-结果被转码成了1&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;
-加载到webView显示会有问题，解决办法:
-1234567891011121314151617181920">
+<meta name="twitter:description" content="做项目时后台传入的HTML字符串本来是
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;balabalaba&amp;lt;/p&amp;gt;&amp;lt;/strong&amp;gt;
+结果被转码成了
+123```加载到webView显示会有问题，解决办法:
+
+(NSString *)stringByDecodingXMLEntities {
+  NSUInteger myLength = [self length];  N">
 
 
 
@@ -377,10 +386,98 @@
       
 
       
-        <p>做项目时后台传入的HTML字符串本来是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&lt;strong&gt;balabalaba&lt;/p&gt;&lt;/strong&gt;</div></pre></td></tr></table></figure></p>
-<p>结果被转码成了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&lt;strong&gt;balabalaba&lt;/strong&gt;&lt;/p&gt;</div></pre></td></tr></table></figure></p>
-<p>加载到webView显示会有问题，解决办法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line">- (NSString *)stringByDecodingXMLEntities &#123;</div><div class="line">    </div><div class="line">    NSUInteger myLength = [self length];</div><div class="line">    NSUInteger ampIndex = [self rangeOfString:@&quot;&amp;&quot; options:NSLiteralSearch].location;</div><div class="line">    </div><div class="line">    // Short-circuit if there are no ampersands.</div><div class="line">    if (ampIndex == NSNotFound) &#123;</div><div class="line">        return self;</div><div class="line">    &#125;</div><div class="line">    // Make result string with some extra capacity.</div><div class="line">    </div><div class="line">    　　NSMutableString *result = [NSMutableString stringWithCapacity:(myLength * 1.25)];</div><div class="line">    </div><div class="line">    </div><div class="line">    　　 // First iteration doesn&apos;t need to scan to &amp; since we did that already, but for code simplicity&apos;s sake we&apos;ll do it again with the scanner.</div><div class="line">    NSScanner *scanner = [NSScanner scannerWithString:self];</div><div class="line">    </div><div class="line">    [scanner setCharactersToBeSkipped:nil];</div><div class="line">    </div><div class="line">    NSCharacterSet *boundaryCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@&quot; \t\n\r;&quot;];</div><div class="line">    </div><div class="line">    do &#123;</div><div class="line">        // Scan up to the next entity or the end of the string.</div><div class="line">        NSString *nonEntityString;</div><div class="line">        if ([scanner scanUpToString:@&quot;&amp;&quot; intoString:&amp;nonEntityString]) &#123;</div><div class="line">            [result appendString:nonEntityString];</div><div class="line">        &#125;</div><div class="line">        if ([scanner isAtEnd]) &#123;</div><div class="line">            goto finish;</div><div class="line">        &#125;</div><div class="line">        // Scan either a HTML or numeric character entity reference.</div><div class="line">        if ([scanner scanString:@&quot;&amp;&quot; intoString:NULL])</div><div class="line">            [result appendString:@&quot;&amp;&quot;];</div><div class="line">        else if ([scanner scanString:@&quot;&apos;&quot; intoString:NULL])</div><div class="line">            [result appendString:@&quot;&apos;&quot;];</div><div class="line">        else if ([scanner scanString:@&quot;&quot;&quot; intoString:NULL])</div><div class="line">            [result appendString:@&quot;\&quot;&quot;];</div><div class="line">        else if ([scanner scanString:@&quot;&lt;&quot; intoString:NULL])</div><div class="line">            [result appendString:@&quot;&lt;&quot;];</div><div class="line">        else if ([scanner scanString:@&quot;&gt;&quot; intoString:NULL])</div><div class="line">            [result appendString:@&quot;&gt;&quot;];</div><div class="line">        else if ([scanner scanString:@&quot;&amp;#&quot; intoString:NULL]) &#123;</div><div class="line">            BOOL gotNumber;</div><div class="line">            unsigned charCode;</div><div class="line">            NSString *xForHex = @&quot;&quot;;</div><div class="line">            </div><div class="line">            // Is it hex or decimal?</div><div class="line">            if ([scanner scanString:@&quot;x&quot; intoString:&amp;xForHex]) &#123;</div><div class="line">                gotNumber = [scanner scanHexInt:&amp;charCode];</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                gotNumber = [scanner scanInt:(int*)&amp;charCode];</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            if (gotNumber) &#123;</div><div class="line">                [result appendFormat:@&quot;%C&quot;, charCode];</div><div class="line">                </div><div class="line">                [scanner scanString:@&quot;;&quot; intoString:NULL];</div><div class="line">            &#125;</div><div class="line">            else &#123;</div><div class="line">                NSString *unknownEntity = @&quot;&quot;;</div><div class="line">                </div><div class="line">                [scanner scanUpToCharactersFromSet:boundaryCharacterSet intoString:&amp;unknownEntity];</div><div class="line">                </div><div class="line">                </div><div class="line">                [result appendFormat:@&quot;&amp;#%@%@&quot;, xForHex, unknownEntity];</div><div class="line">                </div><div class="line">                //[scanner scanUpToString:@&quot;;&quot; intoString:&amp;unknownEntity];</div><div class="line">                //[result appendFormat:@&quot;&amp;#%@%@;&quot;, xForHex, unknownEntity];</div><div class="line">                NSLog(@&quot;Expected numeric character entity but got &amp;#%@%@;&quot;, xForHex, unknownEntity);</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            NSString *amp;</div><div class="line">            </div><div class="line">            [scanner scanString:@&quot;&amp;&quot; intoString:&amp;amp];      //an isolated &amp; symbol</div><div class="line">            [result appendString:amp];</div><div class="line">            </div><div class="line">            /*</div><div class="line">             NSString *unknownEntity = @&quot;&quot;;</div><div class="line">             [scanner scanUpToString:@&quot;;&quot; intoString:&amp;unknownEntity];</div><div class="line">             NSString *semicolon = @&quot;&quot;;</div><div class="line">             [scanner scanString:@&quot;;&quot; intoString:&amp;semicolon];</div><div class="line">             [result appendFormat:@&quot;%@%@&quot;, unknownEntity, semicolon];</div><div class="line">             NSLog(@&quot;Unsupported XML character entity %@%@&quot;, unknownEntity, semicolon);</div><div class="line">             */</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    while (![scanner isAtEnd]);</div><div class="line">    </div><div class="line">finish:</div><div class="line">    return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>做项目时后台传入的HTML字符串本来是</p>
+<p><code>&lt;p&gt;&lt;strong&gt;balabalaba&lt;/p&gt;&lt;/strong&gt;</code></p>
+<p>结果被转码成了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">加载到webView显示会有问题，解决办法:</div></pre></td></tr></table></figure>
+<ul>
+<li><p>(NSString *)stringByDecodingXMLEntities {</p>
+<p>  NSUInteger myLength = [self length];<br>  NSUInteger ampIndex = [self rangeOfString:@”&amp;” options:NSLiteralSearch].location;</p>
+<p>  // Short-circuit if there are no ampersands.<br>  if (ampIndex == NSNotFound) {</p>
+<pre><code>return self;
+</code></pre><p>  }<br>  // Make result string with some extra capacity.</p>
+<p>  　　NSMutableString <em>result = [NSMutableString stringWithCapacity:(myLength </em> 1.25)];</p>
+</li>
+</ul>
+<pre><code>　　 // First iteration doesn&apos;t need to scan to &amp; since we did that already, but for code simplicity&apos;s sake we&apos;ll do it again with the scanner.
+NSScanner *scanner = [NSScanner scannerWithString:self];
+
+[scanner setCharactersToBeSkipped:nil];
+
+NSCharacterSet *boundaryCharacterSet = [NSCharacterSet characterSetWithCharactersInString:@&quot; \t\n\r;&quot;];
+
+do {
+    // Scan up to the next entity or the end of the string.
+    NSString *nonEntityString;
+    if ([scanner scanUpToString:@&quot;&amp;&quot; intoString:&amp;nonEntityString]) {
+        [result appendString:nonEntityString];
+    }
+    if ([scanner isAtEnd]) {
+        goto finish;
+    }
+    // Scan either a HTML or numeric character entity reference.
+    if ([scanner scanString:@&quot;&amp;&quot; intoString:NULL])
+        [result appendString:@&quot;&amp;&quot;];
+    else if ([scanner scanString:@&quot;&apos;&quot; intoString:NULL])
+        [result appendString:@&quot;&apos;&quot;];
+    else if ([scanner scanString:@&quot;&quot;&quot; intoString:NULL])
+        [result appendString:@&quot;\&quot;&quot;];
+    else if ([scanner scanString:@&quot;&lt;&quot; intoString:NULL])
+        [result appendString:@&quot;&lt;&quot;];
+    else if ([scanner scanString:@&quot;&gt;&quot; intoString:NULL])
+        [result appendString:@&quot;&gt;&quot;];
+    else if ([scanner scanString:@&quot;&amp;#&quot; intoString:NULL]) {
+        BOOL gotNumber;
+        unsigned charCode;
+        NSString *xForHex = @&quot;&quot;;
+
+        // Is it hex or decimal?
+        if ([scanner scanString:@&quot;x&quot; intoString:&amp;xForHex]) {
+            gotNumber = [scanner scanHexInt:&amp;charCode];
+        }
+        else {
+            gotNumber = [scanner scanInt:(int*)&amp;charCode];
+        }
+
+        if (gotNumber) {
+            [result appendFormat:@&quot;%C&quot;, charCode];
+
+            [scanner scanString:@&quot;;&quot; intoString:NULL];
+        }
+        else {
+            NSString *unknownEntity = @&quot;&quot;;
+
+            [scanner scanUpToCharactersFromSet:boundaryCharacterSet intoString:&amp;unknownEntity];
+
+
+            [result appendFormat:@&quot;&amp;#%@%@&quot;, xForHex, unknownEntity];
+
+            //[scanner scanUpToString:@&quot;;&quot; intoString:&amp;unknownEntity];
+            //[result appendFormat:@&quot;&amp;#%@%@;&quot;, xForHex, unknownEntity];
+            NSLog(@&quot;Expected numeric character entity but got &amp;#%@%@;&quot;, xForHex, unknownEntity);
+
+        }
+
+    }
+    else {
+        NSString *amp;
+
+        [scanner scanString:@&quot;&amp;&quot; intoString:&amp;amp];      //an isolated &amp; symbol
+        [result appendString:amp];
+
+        /*
+         NSString *unknownEntity = @&quot;&quot;;
+         [scanner scanUpToString:@&quot;;&quot; intoString:&amp;unknownEntity];
+         NSString *semicolon = @&quot;&quot;;
+         [scanner scanString:@&quot;;&quot; intoString:&amp;semicolon];
+         [result appendFormat:@&quot;%@%@&quot;, unknownEntity, semicolon];
+         NSLog(@&quot;Unsupported XML character entity %@%@&quot;, unknownEntity, semicolon);
+         */
+    }
+
+}
+while (![scanner isAtEnd]);
+</code></pre><p>finish:<br>    return result;<br>}<br>```</p>
 
       
     </div>
