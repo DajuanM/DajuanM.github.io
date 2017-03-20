@@ -366,13 +366,10 @@
       
         
           
-          做项目时后台传入的HTML字符串本来是
-&lt;p&gt;&lt;strong&gt;balabalaba&lt;/p&gt;&lt;/strong&gt;
-结果被转码成了
-123```加载到webView显示会有问题，解决办法:
-
-(NSString *)stringByDecodingXMLEntities {
-  NSUInteger myLength = [self length];  N
+          做项目时后台传入的HTML字符串本来是1&lt;p&gt;&lt;strong&gt;balabalaba&lt;/p&gt;&lt;/strong&gt;
+结果被转码成了1&lt;p&gt;&lt;strong&gt;balabalaba&lt;/strong&gt;&lt;/p&gt;
+加载到webView显示会有问题，解决办法:
+1234567891011121314151617181920
           ...
           <!--noindex-->
           <div class="post-button text-center">
