@@ -87,16 +87,47 @@
 
 
 
-<meta name="description" content="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != nil)">
+<meta name="description" content="iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。
+##1.运行程序
+让程序先跑起来
+##2.进入Leak工具
+
+如上图，选中show the debug（箭头指的），然后点击Memory
+
+然后点击profile in instruments,通过Leak重新运">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Swift怎么通过类名字符串来创建一个类">
-<meta property="og:url" content="http://yoursite.com/2016/09/20/iOS/Swift怎么通过类名字符串来创建一个类/index.html">
+<meta property="og:title" content="iOS中内存泄漏调试">
+<meta property="og:url" content="http://yoursite.com/2017/02/20/iOS/iOS内存泄漏/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
-<meta property="og:description" content="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != nil)">
-<meta property="og:updated_time" content="2017-03-24T02:24:36.000Z">
+<meta property="og:description" content="iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。
+##1.运行程序
+让程序先跑起来
+##2.进入Leak工具
+
+如上图，选中show the debug（箭头指的），然后点击Memory
+
+然后点击profile in instruments,通过Leak重新运">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-c11a7304ff9458be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-ea437d1c8cb1f46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-138db9e1d7656060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-b1a95814ee0709a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-db2e9d8fa4fc4697.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-7d70003c75bc1a2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-dec380e4444a5401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-2633f133d65974d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-c65f6e8d94cf5da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:updated_time" content="2017-03-24T02:55:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift怎么通过类名字符串来创建一个类">
-<meta name="twitter:description" content="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&amp;quot;CFBundleExecutable&amp;quot;]guard ((namespace as? String) != nil)">
+<meta name="twitter:title" content="iOS中内存泄漏调试">
+<meta name="twitter:description" content="iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。
+##1.运行程序
+让程序先跑起来
+##2.进入Leak工具
+
+如上图，选中show the debug（箭头指的），然后点击Memory
+
+然后点击profile in instruments,通过Leak重新运">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1903176-c11a7304ff9458be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -124,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/20/iOS/Swift怎么通过类名字符串来创建一个类/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/02/20/iOS/iOS内存泄漏/"/>
 
 
 
 
 
-  <title> Swift怎么通过类名字符串来创建一个类 | 浮浮沉沉丶 </title>
+  <title> iOS中内存泄漏调试 | 浮浮沉沉丶 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +300,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/20/iOS/Swift怎么通过类名字符串来创建一个类/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/20/iOS/iOS内存泄漏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="浮浮沉沉丶">
@@ -290,7 +321,7 @@
             
             
               
-                Swift怎么通过类名字符串来创建一个类
+                iOS中内存泄漏调试
               
             
           </h1>
@@ -305,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-20T11:26:00+08:00">
-                2016-09-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-20T18:01:22+08:00">
+                2017-02-20
               </time>
             
 
@@ -363,7 +394,32 @@
       
 
       
-        <h2 id="OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为"><a href="#OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为" class="headerlink" title="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为"></a>OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]</div><div class="line"></div><div class="line">guard ((namespace as? String) != nil) else&#123;</div><div class="line"></div><div class="line">return </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">let modelClass : AnyClass? = NSClassFromString((namespace as? String)!+&quot;.&quot;+modelClassStr)</div><div class="line"></div><div class="line">let baseModel  = modelClass?.alloc()</div></pre></td></tr></table></figure>
+        <p>iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。</p>
+<p>##1.运行程序</p>
+<p>让程序先跑起来</p>
+<p>##2.进入Leak工具</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-c11a7304ff9458be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如上图，选中show the debug（箭头指的），然后点击Memory</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-ea437d1c8cb1f46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>然后点击profile in instruments,通过Leak重新运行程序(弹出框中选择Restart</p>
+<p>##3.操作Leak工具</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-138db9e1d7656060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>如上图，此时程序在跑起来了，Leak Checks右边显示绿色的钩，表示当前没有内存泄漏，这时候我们就可以操作我的app了，跑起来吧，直到发现有红色的X，表示在这里有内存泄漏，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-b1a95814ee0709a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>点击红色X，选择Call Tree，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-db2e9d8fa4fc4697.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>这时候下面的列表会出来很多方法，但都是系统的，表示看不懂有木有啊。。。这时候点击右边中间的选项，然后勾选Call Tree下的Separate by Thread 和 Hide System Libraries，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-7d70003c75bc1a2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>然后再看左右，下面列表的方法就会变成了我们自己写的方法了，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-dec380e4444a5401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在这里，有的人肯定会有疑问，为啥他的列表里的方法都是一些进制类的看不懂的，或者就是空白，这是因为Xcode编译项目后，我们会看到一个同名的 dSYM 文件，dSYM 是保存 16 进制函数地址映射信息的中转文件，我们调试的 symbols 都会包含在这个文件中，并且每次编译项目的时候都会生成一个新的 dSYM 文件。显示进制是因为我们的工程build settings 的问题，没有生成dSYM 文件，也就无法解析debug symbols。做法如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-2633f133d65974d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>在Build Options将Debug information Format选择dsYM，这里默认的可能是release下选择的，将debug下也选择就可以了。<br>然后重新从编译，重新运行，从第一步重新走一遍即可出来<br>最后双击列表中暴露出来的方法，会直接显示代码，神不神奇~</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-c65f6e8d94cf5da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>利用这个调试方法，里里外外将我们程序跑一跑，将内存泄漏的地方都改过来，这样程序闪退的机率将会大大减小。</p>
+<p>关于product-&gt;analyze分析内存泄漏的问题<br>优点：分析速度快，并且可以对所有的代码进行内存分析<br>缺点：分析结果不一定准确（没有运行程序，根据代码的上下文语法结构）<br>所以最好还是用Leak工具进行动态运行检查。</p>
+<p>路漫漫其修远兮，吾将上下而求索，与君互勉。</p>
+
       
     </div>
 
@@ -426,15 +482,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/01/20/iOS/一行代码解决NavigationController多次push问题/" rel="next" title="一行代码解决NavigationController多次push问题">
+                <i class="fa fa-chevron-left"></i> 一行代码解决NavigationController多次push问题
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/20/iOS/SDWebImage更新图片缓存的方法/" rel="prev" title="SDWebImage更新图片缓存的方法">
-                SDWebImage更新图片缓存的方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -481,17 +537,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/avatar.jpg"
@@ -578,22 +625,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为"><span class="nav-number">1.</span> <span class="nav-text">OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
