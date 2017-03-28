@@ -89,20 +89,20 @@
 
 <meta name="description" content="jQuery对象和DOM对象第一次学习jQuery,经常分辨不清哪些是jQuery对象，哪些是 DOM对象，因此需要重点了解jQuery对象和DOM对象以及它们之间的关系.
 DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象;
-1var domObj = document.getElementById(&amp;quot;id&amp;qu">
+1var domObj = document.getElementById(&quot;id&quot;); //DO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM对象与jquery对象有什么不同">
 <meta property="og:url" content="http://yoursite.com/2017/03/05/web/DOM对象与jquery对象有什么不同/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
 <meta property="og:description" content="jQuery对象和DOM对象第一次学习jQuery,经常分辨不清哪些是jQuery对象，哪些是 DOM对象，因此需要重点了解jQuery对象和DOM对象以及它们之间的关系.
 DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象;
-1var domObj = document.getElementById(&amp;quot;id&amp;qu">
-<meta property="og:updated_time" content="2017-03-28T09:53:44.000Z">
+1var domObj = document.getElementById(&quot;id&quot;); //DO">
+<meta property="og:updated_time" content="2017-03-28T10:31:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM对象与jquery对象有什么不同">
 <meta name="twitter:description" content="jQuery对象和DOM对象第一次学习jQuery,经常分辨不清哪些是jQuery对象，哪些是 DOM对象，因此需要重点了解jQuery对象和DOM对象以及它们之间的关系.
 DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象;
-1var domObj = document.getElementById(&amp;quot;id&amp;qu">
+1var domObj = document.getElementById(&quot;id&quot;); //DO">
 
 
 
@@ -371,22 +371,22 @@ DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery�
       
         <h2 id="jQuery对象和DOM对象"><a href="#jQuery对象和DOM对象" class="headerlink" title="jQuery对象和DOM对象"></a>jQuery对象和DOM对象</h2><p>第一次学习jQuery,经常分辨不清哪些是jQuery对象，哪些是 DOM对象，因此需要重点了解jQuery对象和DOM对象以及它们之间的关系.</p>
 <p>DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var domObj = document.getElementById(&quot;id&quot;); //DOM对象</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $obj = $(&quot;#id&quot;); //jQuery对象;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var domObj = document.getElementById("id"); //DOM对象</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $obj = $("#id"); //jQuery对象;</div></pre></td></tr></table></figure>
 <p>jQuery对象就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法，例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;#foo&quot;).html(); //获取id为foo的元素内的html代码，html()是jQuery特有的方法;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$("#foo").html(); //获取id为foo的元素内的html代码，html()是jQuery特有的方法;</div></pre></td></tr></table></figure>
 <p>上面的那段代码等同于:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementById(&quot;foo&quot;).innerHTML;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementById("foo").innerHTML;</div></pre></td></tr></table></figure>
 <p>注意：在jQuery对象中无法使用DOM对象的任何方法。</p>
 <p>例如<code>$(&quot;#id&quot;).innerHTML</code>和<code>$(&quot;#id&quot;).checked</code>之类的写法都是错误的，可以用<code>$(&quot;#id&quot;).html()</code>和<code>$(&quot;#id&quot;).attr (&quot;checked&quot;)</code>之类的jQuery方法来代替。同样，DOM对象也不能使用jQuery方法。</p>
 <h2 id="jQuery对象和DOM对象的互相转换"><a href="#jQuery对象和DOM对象的互相转换" class="headerlink" title="jQuery对象和DOM对象的互相转换"></a>jQuery对象和DOM对象的互相转换</h2><h3 id="jquery对象转换成-dom对象"><a href="#jquery对象转换成-dom对象" class="headerlink" title="jquery对象转换成 dom对象"></a>jquery对象转换成 dom对象</h3><p>jquery提供了两种方法将一个jquery对象转换成一个dom对象，即[index]和get(index)。可能有人会觉得奇怪，怎么是用下标呢，没错，jquery对象就是一个数组对象.</p>
 <p>下面代码将演示一个jquery对象转换成dom对象，再使用dom对象的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $cr=$(&quot;#cr&quot;); //jquery对象</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var cr = $cr[0]; //dom对象 也可写成 var cr=$cr.get(0);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(cr.checked); //检测这个checkbox是否给选中</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $cr=$("#cr"); //jquery对象</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var cr = $cr[0]; //dom对象 也可写成 var cr=$cr.get(0);</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(cr.checked); //检测这个checkbox是否给选中</div></pre></td></tr></table></figure>
 <h3 id="dom对象转换成jquery对象"><a href="#dom对象转换成jquery对象" class="headerlink" title="dom对象转换成jquery对象"></a>dom对象转换成jquery对象</h3><p>对于一个dom对象，只需要用$()把dom对象包装起来，就可以获得一个jquery对象了，方法为$(dom对象);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var cr=document.getElementById(&quot;cr&quot;); //dom对象</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $cr = $(cr); //转换成jquery对象</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var cr=document.getElementById("cr"); //dom对象</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $cr = $(cr); //转换成jquery对象</div></pre></td></tr></table></figure>
 <p>转换后可以任意使用jquery中的方法了.</p>
 <p>通过以上的方法，可以任意的相互转换jquery对象和dom对象.</p>
 
@@ -462,6 +462,10 @@ DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery�
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/07/other/hexo主题代码怎么高亮显示/" rel="prev" title="hexo主题代码怎么高亮显示">
+                hexo主题代码怎么高亮显示 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -532,7 +536,7 @@ DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -543,7 +547,7 @@ DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery�
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -554,7 +558,7 @@ DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery�
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
