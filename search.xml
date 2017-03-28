@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[DOM对象与jquery对象有什么不同]]></title>
+      <url>%2F2017%2F03%2F05%2FiOS%2FDOM%E5%AF%B9%E8%B1%A1%E4%B8%8Ejquery%E5%AF%B9%E8%B1%A1%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%2F</url>
+      <content type="text"><![CDATA[jQuery对象和DOM对象第一次学习jQuery,经常分辨不清哪些是jQuery对象，哪些是 DOM对象，因此需要重点了解jQuery对象和DOM对象以及它们之间的关系. DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象; 1var domObj = document.getElementById(&quot;id&quot;); //DOM对象 1var $obj = $(&quot;#id&quot;); //jQuery对象; jQuery对象就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法，例: 1$(&quot;#foo&quot;).html(); //获取id为foo的元素内的html代码，html()是jQuery特有的方法; 上面的那段代码等同于: 1document.getElementById(&quot;foo&quot;).innerHTML; 注意：在jQuery对象中无法使用DOM对象的任何方法。 例如$(&quot;#id&quot;).innerHTML和$(&quot;#id&quot;).checked之类的写法都是错误的，可以用$(&quot;#id&quot;).html()和$(&quot;#id&quot;).attr (&quot;checked&quot;)之类的jQuery方法来代替。同样，DOM对象也不能使用jQuery方法。 jQuery对象和DOM对象的互相转换jquery对象转换成 dom对象jquery提供了两种方法将一个jquery对象转换成一个dom对象，即[index]和get(index)。可能有人会觉得奇怪，怎么是用下标呢，没错，jquery对象就是一个数组对象. 下面代码将演示一个jquery对象转换成dom对象，再使用dom对象的方法 1var $cr=$(&quot;#cr&quot;); //jquery对象 1var cr = $cr[0]; //dom对象 也可写成 var cr=$cr.get(0); 1alert(cr.checked); //检测这个checkbox是否给选中 dom对象转换成jquery对象对于一个dom对象，只需要用$()把dom对象包装起来，就可以获得一个jquery对象了，方法为$(dom对象); 1var cr=document.getElementById(&quot;cr&quot;); //dom对象 1var $cr = $(cr); //转换成jquery对象 转换后可以任意使用jquery中的方法了. 通过以上的方法，可以任意的相互转换jquery对象和dom对象.]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[iOS中内存泄漏调试]]></title>
       <url>%2F2017%2F02%2F20%2FiOS%2FiOS%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%2F</url>
       <content type="text"><![CDATA[iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。 ##1.运行程序 让程序先跑起来 ##2.进入Leak工具 如上图，选中show the debug（箭头指的），然后点击Memory 然后点击profile in instruments,通过Leak重新运行程序(弹出框中选择Restart ##3.操作Leak工具 如上图，此时程序在跑起来了，Leak Checks右边显示绿色的钩，表示当前没有内存泄漏，这时候我们就可以操作我的app了，跑起来吧，直到发现有红色的X，表示在这里有内存泄漏，如下图 点击红色X，选择Call Tree，如下图 这时候下面的列表会出来很多方法，但都是系统的，表示看不懂有木有啊。。。这时候点击右边中间的选项，然后勾选Call Tree下的Separate by Thread 和 Hide System Libraries，如下图 然后再看左右，下面列表的方法就会变成了我们自己写的方法了，如下图 在这里，有的人肯定会有疑问，为啥他的列表里的方法都是一些进制类的看不懂的，或者就是空白，这是因为Xcode编译项目后，我们会看到一个同名的 dSYM 文件，dSYM 是保存 16 进制函数地址映射信息的中转文件，我们调试的 symbols 都会包含在这个文件中，并且每次编译项目的时候都会生成一个新的 dSYM 文件。显示进制是因为我们的工程build settings 的问题，没有生成dSYM 文件，也就无法解析debug symbols。做法如下图 在Build Options将Debug information Format选择dsYM，这里默认的可能是release下选择的，将debug下也选择就可以了。然后重新从编译，重新运行，从第一步重新走一遍即可出来最后双击列表中暴露出来的方法，会直接显示代码，神不神奇~ 利用这个调试方法，里里外外将我们程序跑一跑，将内存泄漏的地方都改过来，这样程序闪退的机率将会大大减小。 关于product-&gt;analyze分析内存泄漏的问题优点：分析速度快，并且可以对所有的代码进行内存分析缺点：分析结果不一定准确（没有运行程序，根据代码的上下文语法结构）所以最好还是用Leak工具进行动态运行检查。 路漫漫其修远兮，吾将上下而求索，与君互勉。]]></content>
