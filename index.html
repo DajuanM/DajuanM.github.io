@@ -1306,7 +1306,7 @@ UINavigationController+PushSafe.h
       
         
           
-          OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary![&quot;CFBundleExecutable&quot;]guard ((namespace as? String) != nil)
+          OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为1234567891011let namespace = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"]guard ((namespace as? String) != nil) else&#123
           ...
           <!--noindex-->
           <div class="post-button text-center">
