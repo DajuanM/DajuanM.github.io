@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[jQuery的使用]]></title>
+      <url>%2F2017%2F04%2F26%2Fweb%2FjQuery%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+      <content type="text"><![CDATA[jQuery DOM操作 jQuery 获取123456$("#btn1").click(function()&#123; alert("Text: " + $("#test").text());&#125;);$("#btn2").click(function()&#123; alert("HTML: " + $("#test").html());&#125;); 亲自试一试 jQuery 设置123456789$("#btn1").click(function()&#123; $("#test1").text("Hello world!");&#125;);$("#btn2").click(function()&#123; $("#test2").html("&lt;b&gt;Hello world!&lt;/b&gt;");&#125;);$("#btn3").click(function()&#123; $("#test3").val("Dolly Duck");&#125;); 亲自试一试 jQuery 添加 append() - 在被选元素内的结尾插入内容 1$("p").append("Some appended text."); 亲自试一试 prepend() - 在被选元素内的开头插入内容 1$("p").prepend("Some prepended text."); 亲自试一试 after() - 在被选元素之后插入内容 1$("img").after("Some text after"); 亲自试一试 before() - 在被选元素之前插入内容 1$("img").before("Some text before"); 亲自试一试 jQuery 删除 remove() - 删除被选元素（及其子元素） 1$("#div1").remove(); 亲自试一试 empty() - 从被选元素中删除子元素 1$("#div1").empty(); 亲自试一试 jQuery css()设置css属性 1$("p").css("background-color"); 亲自试一试 设置多个css属性 1$("p").css(&#123;"background-color":"yellow","font-size":"200%"&#125;); 亲自试一试 jQuery 效果 jQuery 隐藏/显示1234567$("#hide").click(function()&#123; $("p").hide();&#125;);$("#show").click(function()&#123; $("p").show();&#125;); 亲自试一试 jQuery 淡入淡出 fadeIn() 12345$("button").click(function()&#123; $("#div1").fadeIn(); $("#div2").fadeIn("slow"); $("#div3").fadeIn(3000);&#125;); 亲自试一试 fadeOut() 12345$("button").click(function()&#123; $("#div1").fadeOut(); $("#div2").fadeOut("slow"); $("#div3").fadeOut(3000);&#125;); 亲自试一试 fadeToggle() 12345$("button").click(function()&#123; $("#div1").fadeToggle(); $("#div2").fadeToggle("slow"); $("#div3").fadeToggle(3000);&#125;); 亲自试一试 fadeTo() 12345$("button").click(function()&#123; $("#div1").fadeTo("slow",0.15); $("#div2").fadeTo("slow",0.4); $("#div3").fadeTo("slow",0.7);&#125;); 亲自试一试 jQuery 滑动 slideDown() slideUp() slideToggle() ​ ​]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[hexo主题代码怎么高亮显示]]></title>
       <url>%2F2017%2F03%2F07%2Fother%2Fhexo%E4%B8%BB%E9%A2%98%E4%BB%A3%E7%A0%81%E6%80%8E%E4%B9%88%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%2F</url>
       <content type="text"><![CDATA[看到很多人跟我一样在按照hexo主题官方文档配置后，结果代码还是不能高亮显示。觉得将它记录下来希望能帮助到刚喜欢用博客来记录东西的朋友。 代码块需要用到两个```,在第一个后面需要加上代码的语言 如图 常用语言对应表 语言 对应代码 Bash bash,sh,zsh C# cs,csharp C++ cpp,c,cc,h,c++,h++,hop CSS css DOS dos,bat,cmd HTML,XML xml,html,xhtml,rss,atom,xjb,xsd,ssl,plist JSON json java java JavaScript javascript, js, jsx Objective-C objectivec, mm, objc, obj-c PHP php, php3, php4, php5, php6 Ruby ruby, rb, gemspec, podspec, thor, irb SQL sql Swift swift VB.Net vbnet, vb]]></content>
