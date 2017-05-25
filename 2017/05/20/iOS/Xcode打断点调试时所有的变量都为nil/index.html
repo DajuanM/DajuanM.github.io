@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,AFNetworking," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,34 +87,25 @@
 
 
 
-<meta name="description" content="requestSerializerrequestSerializer它是AFNetworking参数编码的序列化器：
-
-AFHTTPRequestSerializer普通的http的编码格式，二进制
-AFJSONRequestSerializerjson编码格式
-AFPropertyListRequestSerializerplist编码格式
-
-responseSerializerresponse">
+<meta name="description" content="今天开发的时候打断点进行调试，结果控制台上显示的变量都是nil,例:
+![http://upload-images.jianshu.io/upload_images/1353091-216e812b0cbd7271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+解决办法，如图：
+![http://upload-images.jia">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AFNetworking的requestSerializer跟responseSerializer">
-<meta property="og:url" content="http://yoursite.com/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/index.html">
+<meta property="og:title" content="Xcode打断点调试时所有的变量都为nil">
+<meta property="og:url" content="http://yoursite.com/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
-<meta property="og:description" content="requestSerializerrequestSerializer它是AFNetworking参数编码的序列化器：
-
-AFHTTPRequestSerializer普通的http的编码格式，二进制
-AFJSONRequestSerializerjson编码格式
-AFPropertyListRequestSerializerplist编码格式
-
-responseSerializerresponse">
-<meta property="og:updated_time" content="2017-05-16T13:33:50.000Z">
+<meta property="og:description" content="今天开发的时候打断点进行调试，结果控制台上显示的变量都是nil,例:
+![http://upload-images.jianshu.io/upload_images/1353091-216e812b0cbd7271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+解决办法，如图：
+![http://upload-images.jia">
+<meta property="og:updated_time" content="2017-05-25T15:13:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AFNetworking的requestSerializer跟responseSerializer">
-<meta name="twitter:description" content="requestSerializerrequestSerializer它是AFNetworking参数编码的序列化器：
-
-AFHTTPRequestSerializer普通的http的编码格式，二进制
-AFJSONRequestSerializerjson编码格式
-AFPropertyListRequestSerializerplist编码格式
-
-responseSerializerresponse">
+<meta name="twitter:title" content="Xcode打断点调试时所有的变量都为nil">
+<meta name="twitter:description" content="今天开发的时候打断点进行调试，结果控制台上显示的变量都是nil,例:
+![http://upload-images.jianshu.io/upload_images/1353091-216e812b0cbd7271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+解决办法，如图：
+![http://upload-images.jia">
 
 
 
@@ -142,13 +133,13 @@ responseSerializerresponse">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/"/>
 
 
 
 
 
-  <title> AFNetworking的requestSerializer跟responseSerializer | 浮浮沉沉丶 </title>
+  <title> Xcode打断点调试时所有的变量都为nil | 浮浮沉沉丶 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +278,7 @@ responseSerializerresponse">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="浮浮沉沉丶">
@@ -308,7 +299,7 @@ responseSerializerresponse">
             
             
               
-                AFNetworking的requestSerializer跟responseSerializer
+                Xcode打断点调试时所有的变量都为nil
               
             
           </h1>
@@ -323,8 +314,8 @@ responseSerializerresponse">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T00:00:00+08:00">
-                2017-05-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T00:00:00+08:00">
+                2017-05-20
               </time>
             
 
@@ -381,22 +372,11 @@ responseSerializerresponse">
       
 
       
-        <h2 id="requestSerializer"><a href="#requestSerializer" class="headerlink" title="requestSerializer"></a>requestSerializer</h2><p><code>requestSerializer</code>它是AFNetworking参数编码的序列化器：</p>
-<ul>
-<li><code>AFHTTPRequestSerializer</code>普通的http的编码格式，二进制</li>
-<li><code>AFJSONRequestSerializer</code>json编码格式</li>
-<li><code>AFPropertyListRequestSerializer</code>plist编码格式</li>
-</ul>
-<h2 id="responseSerializer"><a href="#responseSerializer" class="headerlink" title="responseSerializer"></a>responseSerializer</h2><p><code>responseSerializer</code>它是AFNetworking返回内容编码的序列化器：</p>
-<ul>
-<li><code>AFHTTPResponseSerializer</code>普通的http的编码格式，二进制</li>
-<li><code>AFJSONResponseSerializer</code> json编码格式</li>
-<li><code>AFXMLParserRequestSerializer</code> plist编码格式</li>
-<li><code>AFXMLDocumentResponseSerializer</code> XML,只能返回XMLParser，还需要自己解析</li>
-<li><code>AFPropertyListRequestSerializer</code> plist编码格式</li>
-<li><code>AFImageResponseSerializer</code> image</li>
-<li><code>AFCompoundRequestSerializer</code> 组合</li>
-</ul>
+        <p>今天开发的时候打断点进行调试，结果控制台上显示的变量都是nil,例:</p>
+<p>![<a href="http://upload-images.jianshu.io/upload_images/1353091-216e812b0cbd7271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external">http://upload-images.jianshu.io/upload_images/1353091-216e812b0cbd7271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a>)</p>
+<p>解决办法，如图：</p>
+<p>![<a href="http://upload-images.jianshu.io/upload_images/1353091-fa995633fc3a43ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="external">http://upload-images.jianshu.io/upload_images/1353091-fa995633fc3a43ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a>)</p>
+<p>将Optimization Level 设为none</p>
 
       
     </div>
@@ -449,8 +429,6 @@ responseSerializerresponse">
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/AFNetworking/" rel="tag"># AFNetworking</a>
-          
         </div>
       
 
@@ -462,8 +440,8 @@ responseSerializerresponse">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/26/web/jQuery的使用/" rel="next" title="jQuery的使用">
-                <i class="fa fa-chevron-left"></i> jQuery的使用
+              <a href="/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/" rel="next" title="AFNetworking的requestSerializer跟responseSerializer">
+                <i class="fa fa-chevron-left"></i> AFNetworking的requestSerializer跟responseSerializer
               </a>
             
           </div>
@@ -472,8 +450,8 @@ responseSerializerresponse">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/" rel="prev" title="Xcode打断点调试时所有的变量都为nil">
-                Xcode打断点调试时所有的变量都为nil <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/23/iOS/iOS开发输入框字数限制/" rel="prev" title="iOS开发输入框字数限制">
+                iOS开发输入框字数限制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,17 +499,8 @@ responseSerializerresponse">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/avatar.jpg"
@@ -618,22 +587,6 @@ responseSerializerresponse">
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#requestSerializer"><span class="nav-number">1.</span> <span class="nav-text">requestSerializer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#responseSerializer"><span class="nav-number">2.</span> <span class="nav-text">responseSerializer</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

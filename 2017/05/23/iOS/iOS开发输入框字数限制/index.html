@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,AFNetworking," />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -87,34 +87,19 @@
 
 
 
-<meta name="description" content="requestSerializerrequestSerializer它是AFNetworking参数编码的序列化器：
-
-AFHTTPRequestSerializer普通的http的编码格式，二进制
-AFJSONRequestSerializerjson编码格式
-AFPropertyListRequestSerializerplist编码格式
-
-responseSerializerresponse">
+<meta name="description" content="在在网上查了资料，很多都是下面这个方法，但是在原生键盘上是有问题的，当当在手机上英文九宫格连点的时候，会替换掉最后的文字
+123456789101112131415161718192021222324252627282930313233343536373839404142[[NSNotificationCenter defaultCenter]addObserver:self selector:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AFNetworking的requestSerializer跟responseSerializer">
-<meta property="og:url" content="http://yoursite.com/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/index.html">
+<meta property="og:title" content="iOS开发输入框字数限制">
+<meta property="og:url" content="http://yoursite.com/2017/05/23/iOS/iOS开发输入框字数限制/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
-<meta property="og:description" content="requestSerializerrequestSerializer它是AFNetworking参数编码的序列化器：
-
-AFHTTPRequestSerializer普通的http的编码格式，二进制
-AFJSONRequestSerializerjson编码格式
-AFPropertyListRequestSerializerplist编码格式
-
-responseSerializerresponse">
-<meta property="og:updated_time" content="2017-05-16T13:33:50.000Z">
+<meta property="og:description" content="在在网上查了资料，很多都是下面这个方法，但是在原生键盘上是有问题的，当当在手机上英文九宫格连点的时候，会替换掉最后的文字
+123456789101112131415161718192021222324252627282930313233343536373839404142[[NSNotificationCenter defaultCenter]addObserver:self selector:">
+<meta property="og:updated_time" content="2017-05-23T02:12:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AFNetworking的requestSerializer跟responseSerializer">
-<meta name="twitter:description" content="requestSerializerrequestSerializer它是AFNetworking参数编码的序列化器：
-
-AFHTTPRequestSerializer普通的http的编码格式，二进制
-AFJSONRequestSerializerjson编码格式
-AFPropertyListRequestSerializerplist编码格式
-
-responseSerializerresponse">
+<meta name="twitter:title" content="iOS开发输入框字数限制">
+<meta name="twitter:description" content="在在网上查了资料，很多都是下面这个方法，但是在原生键盘上是有问题的，当当在手机上英文九宫格连点的时候，会替换掉最后的文字
+123456789101112131415161718192021222324252627282930313233343536373839404142[[NSNotificationCenter defaultCenter]addObserver:self selector:">
 
 
 
@@ -142,13 +127,13 @@ responseSerializerresponse">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/23/iOS/iOS开发输入框字数限制/"/>
 
 
 
 
 
-  <title> AFNetworking的requestSerializer跟responseSerializer | 浮浮沉沉丶 </title>
+  <title> iOS开发输入框字数限制 | 浮浮沉沉丶 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +272,7 @@ responseSerializerresponse">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/23/iOS/iOS开发输入框字数限制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="浮浮沉沉丶">
@@ -308,7 +293,7 @@ responseSerializerresponse">
             
             
               
-                AFNetworking的requestSerializer跟responseSerializer
+                iOS开发输入框字数限制
               
             
           </h1>
@@ -323,8 +308,8 @@ responseSerializerresponse">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-16T00:00:00+08:00">
-                2017-05-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T00:00:00+08:00">
+                2017-05-23
               </time>
             
 
@@ -381,22 +366,10 @@ responseSerializerresponse">
       
 
       
-        <h2 id="requestSerializer"><a href="#requestSerializer" class="headerlink" title="requestSerializer"></a>requestSerializer</h2><p><code>requestSerializer</code>它是AFNetworking参数编码的序列化器：</p>
-<ul>
-<li><code>AFHTTPRequestSerializer</code>普通的http的编码格式，二进制</li>
-<li><code>AFJSONRequestSerializer</code>json编码格式</li>
-<li><code>AFPropertyListRequestSerializer</code>plist编码格式</li>
-</ul>
-<h2 id="responseSerializer"><a href="#responseSerializer" class="headerlink" title="responseSerializer"></a>responseSerializer</h2><p><code>responseSerializer</code>它是AFNetworking返回内容编码的序列化器：</p>
-<ul>
-<li><code>AFHTTPResponseSerializer</code>普通的http的编码格式，二进制</li>
-<li><code>AFJSONResponseSerializer</code> json编码格式</li>
-<li><code>AFXMLParserRequestSerializer</code> plist编码格式</li>
-<li><code>AFXMLDocumentResponseSerializer</code> XML,只能返回XMLParser，还需要自己解析</li>
-<li><code>AFPropertyListRequestSerializer</code> plist编码格式</li>
-<li><code>AFImageResponseSerializer</code> image</li>
-<li><code>AFCompoundRequestSerializer</code> 组合</li>
-</ul>
+        <p>在在网上查了资料，很多都是下面这个方法，但是在原生键盘上是有问题的，当当在手机上英文九宫格连点的时候，会替换掉最后的文字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textFieldEditChanged:) </div><div class="line">          name:@&quot;UITextFieldTextDidChangeNotification&quot; object:myTextField];</div><div class="line"></div><div class="line">-(void)textFieldEditChanged:(NSNotification *)obj</div><div class="line">&#123;</div><div class="line">    UITextField *textField = (UITextField *)obj.object;</div><div class="line">    NSString *toBeString = textField.text;</div><div class="line">    NSString *lang = [textField.textInputMode primaryLanguage];</div><div class="line">    if ([lang isEqualToString:@&quot;zh-Hans&quot;])// 简体中文输入</div><div class="line">    &#123;</div><div class="line">        //获取高亮部分</div><div class="line">        UITextRange *selectedRange = [textField markedTextRange];</div><div class="line">        UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];</div><div class="line"></div><div class="line">        // 没有高亮选择的字，则对已输入的文字进行字数统计和限制</div><div class="line">        if (!position)</div><div class="line">        &#123;</div><div class="line">            if (toBeString.length &gt; MAX_STARWORDS_LENGTH)</div><div class="line">            &#123;</div><div class="line">                textField.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况</div><div class="line">    else</div><div class="line">    &#123;</div><div class="line">        if (toBeString.length &gt; MAX_STARWORDS_LENGTH)</div><div class="line">        &#123;</div><div class="line">            NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:MAX_STARWORDS_LENGTH];</div><div class="line">            if (rangeIndex.length == 1)</div><div class="line">            &#123;</div><div class="line">                textField.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, MAX_STARWORDS_LENGTH)];</div><div class="line">                textField.text = [toBeString substringWithRange:rangeRange];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>经过多次测试后，终于解决了，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">static const int nameMaxLength = 6;</div><div class="line">@interface FCEditNameViewController ()&lt;UITextFieldDelegate&gt;</div><div class="line">@property (strong, nonatomic) IBOutlet UITextField *nameTextField;</div><div class="line">@property (nonatomic, strong) NSString     *oldStr;//记录修改之前的值</div><div class="line">@property (nonatomic, strong) NSString     *positionStr;记录高亮的文字</div><div class="line">@end</div><div class="line"></div><div class="line">//当前光标位置 range.location </div><div class="line">//已选文字长度 range.length </div><div class="line">- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string&#123;</div><div class="line">    if ([string isEqualToString:@&quot;&quot;]) &#123;</div><div class="line">        return YES;</div><div class="line">    &#125;</div><div class="line">    //获取高亮部分</div><div class="line">    UITextRange *selectedRange = [textField markedTextRange];</div><div class="line">    UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];</div><div class="line">    if (!position) &#123;</div><div class="line">        self.oldStr = textField.text;</div><div class="line">        if (range.length + range.location &gt; textField.text.length) &#123;</div><div class="line">            return NO;</div><div class="line">        &#125;</div><div class="line">        NSInteger newStrLength = [textField.text length] + [string length] - range.length;</div><div class="line">        if (newStrLength &lt;= nameMaxLength) &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;else&#123;</div><div class="line">            return NO;</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">    &#125;else&#123;</div><div class="line">        if ([self IsChinese:string]) &#123;</div><div class="line">            NSString *str = [NSString stringWithFormat:@&quot;%@%@&quot;,self.oldStr,string];</div><div class="line">            self.oldStr = @&quot;&quot;;</div><div class="line">            if (str.length &gt; nameMaxLength) &#123;</div><div class="line">                return NO;</div><div class="line">            &#125;else&#123;</div><div class="line">                return YES;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//判断是否有中文</div><div class="line">- (BOOL)IsChinese:(NSString *)str &#123;</div><div class="line">    for(int i=0; i&lt; [str length];i++)&#123;</div><div class="line">        int a = [str characterAtIndex:i];</div><div class="line">        if( a &gt; 0x4e00 &amp;&amp; a &lt; 0x9fff)</div><div class="line">        &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,8 +422,6 @@ responseSerializerresponse">
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/AFNetworking/" rel="tag"># AFNetworking</a>
-          
         </div>
       
 
@@ -462,8 +433,8 @@ responseSerializerresponse">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/26/web/jQuery的使用/" rel="next" title="jQuery的使用">
-                <i class="fa fa-chevron-left"></i> jQuery的使用
+              <a href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/" rel="next" title="Xcode打断点调试时所有的变量都为nil">
+                <i class="fa fa-chevron-left"></i> Xcode打断点调试时所有的变量都为nil
               </a>
             
           </div>
@@ -471,10 +442,6 @@ responseSerializerresponse">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/" rel="prev" title="Xcode打断点调试时所有的变量都为nil">
-                Xcode打断点调试时所有的变量都为nil <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -521,17 +488,8 @@ responseSerializerresponse">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/images/avatar.jpg"
@@ -618,22 +576,6 @@ responseSerializerresponse">
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#requestSerializer"><span class="nav-number">1.</span> <span class="nav-text">requestSerializer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#responseSerializer"><span class="nav-number">2.</span> <span class="nav-text">responseSerializer</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
