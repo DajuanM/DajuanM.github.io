@@ -21,7 +21,7 @@ github下载地址：DHDragableCellTableView
 使用将tableView继承与DHDragableCellTableView并遵循协议DHDragableCellTableViewDataSource,DHDragableCellTableViewDelegate
 123456789#pragma mark - DHDragableCellTableViewData">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1353091-0b8cce0d40bd6389.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-06-09T16:28:14.000Z">
+<meta property="og:updated_time" content="2017-06-12T14:09:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView长按拖动排序（支持不同行高间交换）">
 <meta name="twitter:description" content="效果图：
@@ -184,6 +184,41 @@ github下载地址：DHDragableCellTableView
         
       </header>
     
+
+
+    <!-- 目录内容 -->
+    
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+    <span class="btn-bg"></span>
+    <span class="btn-text">文章导航</span>
+    </p>
+    <div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图："><span class="toc-number">1.</span> <span class="toc-text">效果图：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现："><span class="toc-number">3.</span> <span class="toc-text">实现：</span></a></li></ol>
+    </div>
+    <script type="text/javascript">
+    function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+    function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+    </script>
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h3><p><img src="http://upload-images.jianshu.io/upload_images/1353091-0b8cce0d40bd6389.gif?imageMogr2/auto-orient/strip" alt="DHDragableCellTableView"></p>
