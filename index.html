@@ -290,10 +290,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在在网上查了资料，很多都是下面这个方法，但是在原生键盘上是有问题的，当当在手机上英文九宫格连点的时候，会替换掉最后的文字</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textFieldEditChanged:) </div><div class="line">          name:@&quot;UITextFieldTextDidChangeNotification&quot; object:myTextField];</div><div class="line"></div><div class="line">-(void)textFieldEditChanged:(NSNotification *)obj</div><div class="line">&#123;</div><div class="line">    UITextField *textField = (UITextField *)obj.object;</div><div class="line">    NSString *toBeString = textField.text;</div><div class="line">    NSString *lang = [textField.textInputMode primaryLanguage];</div><div class="line">    if ([lang isEqualToString:@&quot;zh-Hans&quot;])// 简体中文输入</div><div class="line">    &#123;</div><div class="line">        //获取高亮部分</div><div class="line">        UITextRange *selectedRange = [textField markedTextRange];</div><div class="line">        UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];</div><div class="line"></div><div class="line">        // 没有高亮选择的字，则对已输入的文字进行字数统计和限制</div><div class="line">        if (!position)</div><div class="line">        &#123;</div><div class="line">            if (toBeString.length &gt; MAX_STARWORDS_LENGTH)</div><div class="line">            &#123;</div><div class="line">                textField.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"> &lt;!-- more --&gt;</div><div class="line">    // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况</div><div class="line">    else</div><div class="line">    &#123;</div><div class="line">        if (toBeString.length &gt; MAX_STARWORDS_LENGTH)</div><div class="line">        &#123;</div><div class="line">            NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:MAX_STARWORDS_LENGTH];</div><div class="line">            if (rangeIndex.length == 1)</div><div class="line">            &#123;</div><div class="line">                textField.text = [toBeString substringToIndex:MAX_STARWORDS_LENGTH];</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, MAX_STARWORDS_LENGTH)];</div><div class="line">                textField.text = [toBeString substringWithRange:rangeRange];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>经过多次测试后，终于解决了，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">static const int nameMaxLength = 6;</div><div class="line">@interface FCEditNameViewController ()&lt;UITextFieldDelegate&gt;</div><div class="line">@property (strong, nonatomic) IBOutlet UITextField *nameTextField;</div><div class="line">@property (nonatomic, strong) NSString     *oldStr;//记录修改之前的值</div><div class="line">@property (nonatomic, strong) NSString     *positionStr;记录高亮的文字</div><div class="line">@end</div><div class="line"></div><div class="line">//当前光标位置 range.location </div><div class="line">//已选文字长度 range.length </div><div class="line">- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string&#123;</div><div class="line">    if ([string isEqualToString:@&quot;&quot;]) &#123;</div><div class="line">        return YES;</div><div class="line">    &#125;</div><div class="line">    //获取高亮部分</div><div class="line">    UITextRange *selectedRange = [textField markedTextRange];</div><div class="line">    UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];</div><div class="line">    if (!position) &#123;</div><div class="line">        self.oldStr = textField.text;</div><div class="line">        if (range.length + range.location &gt; textField.text.length) &#123;</div><div class="line">            return NO;</div><div class="line">        &#125;</div><div class="line">        NSInteger newStrLength = [textField.text length] + [string length] - range.length;</div><div class="line">        if (newStrLength &lt;= nameMaxLength) &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;else&#123;</div><div class="line">            return NO;</div><div class="line">        &#125;</div><div class="line">       </div><div class="line">    &#125;else&#123;</div><div class="line">        if ([self IsChinese:string]) &#123;</div><div class="line">            NSString *str = [NSString stringWithFormat:@&quot;%@%@&quot;,self.oldStr,string];</div><div class="line">            self.oldStr = @&quot;&quot;;</div><div class="line">            if (str.length &gt; nameMaxLength) &#123;</div><div class="line">                return NO;</div><div class="line">            &#125;else&#123;</div><div class="line">                return YES;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//判断是否有中文</div><div class="line">- (BOOL)IsChinese:(NSString *)str &#123;</div><div class="line">    for(int i=0; i&lt; [str length];i++)&#123;</div><div class="line">        int a = [str characterAtIndex:i];</div><div class="line">        if( a &gt; 0x4e00 &amp;&amp; a &lt; 0x9fff)</div><div class="line">        &#123;</div><div class="line">            return YES;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2017/05/23/iOS/iOS开发输入框字数限制/#more">more >></a>
+        
       
 
       
@@ -500,9 +499,7 @@
 <li><code>AFImageResponseSerializer</code> image</li>
 <li><code>AFCompoundRequestSerializer</code> 组合</li>
 </ul>
-        
-          <a class="article-more-a" href="/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/#more">more >></a>
-        
+
       
 
       
@@ -604,87 +601,13 @@
 </ul>
 <ol>
 <li><h3 id="jQuery-获取"><a href="#jQuery-获取" class="headerlink" title="jQuery 获取"></a>jQuery 获取</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"Text: "</span> + $(<span class="string">"#test"</span>).text());</div><div class="line">&#125;);</div><div class="line">$(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">"HTML: "</span> + $(<span class="string">"#test"</span>).html());</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_dom_html_get" target="_blank" rel="external">亲自试一试</a></p>
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_dom_html_get">亲自试一试</a></p>
 </li>
 <li><h3 id="jQuery-设置"><a href="#jQuery-设置" class="headerlink" title="jQuery 设置"></a>jQuery 设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#test1"</span>).text(<span class="string">"Hello world!"</span>);</div><div class="line">&#125;);</div><div class="line">$(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#test2"</span>).html(<span class="string">"&lt;b&gt;Hello world!&lt;/b&gt;"</span>);</div><div class="line">&#125;);</div><div class="line">$(<span class="string">"#btn3"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#test3"</span>).val(<span class="string">"Dolly Duck"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_dom_html_set" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><h3 id="jQuery-添加"><a href="#jQuery-添加" class="headerlink" title="jQuery 添加"></a>jQuery 添加</h3><ul>
-<li>append() - 在被选元素内的结尾插入内容</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).append(<span class="string">"Some appended text."</span>);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_html_append" target="_blank" rel="external">亲自试一试</a></p>
-<ul>
-<li>prepend() - 在被选元素内的开头插入内容</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).prepend(<span class="string">"Some prepended text."</span>);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_html_prepend" target="_blank" rel="external">亲自试一试</a></p>
-<ul>
-<li>after() - 在被选元素之后插入内容</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"img"</span>).after(<span class="string">"Some text after"</span>);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_html_after" target="_blank" rel="external">亲自试一试</a></p>
-<ul>
-<li>before() - 在被选元素之前插入内容</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"img"</span>).before(<span class="string">"Some text before"</span>);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_html_after" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><h3 id="jQuery-删除"><a href="#jQuery-删除" class="headerlink" title="jQuery 删除"></a>jQuery 删除</h3><ul>
-<li><p>remove() - 删除被选元素（及其子元素）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#div1"</span>).remove();</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_dom_remove" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><p>empty() - 从被选元素中删除子元素</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#div1"</span>).empty();</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_dom_empty" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-</ul>
-</li>
-<li><h3 id="jQuery-css"><a href="#jQuery-css" class="headerlink" title="jQuery css()"></a>jQuery css()</h3><p>设置css属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"background-color"</span>);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_css_setcolor" target="_blank" rel="external">亲自试一试</a></p>
-<p>设置多个css属性</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).css(&#123;<span class="string">"background-color"</span>:<span class="string">"yellow"</span>,<span class="string">"font-size"</span>:<span class="string">"200%"</span>&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_css_set_multiple" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-</ol>
-<ul>
-<li><h2 id="jQuery-效果"><a href="#jQuery-效果" class="headerlink" title="jQuery 效果"></a>jQuery 效果</h2><ol>
-<li><h3 id="jQuery-隐藏-显示"><a href="#jQuery-隐藏-显示" class="headerlink" title="jQuery 隐藏/显示"></a>jQuery 隐藏/显示</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#hide"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"p"</span>).hide();</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$(<span class="string">"#show"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"p"</span>).show();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_hide_show" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><h3 id="jQuery-淡入淡出"><a href="#jQuery-淡入淡出" class="headerlink" title="jQuery 淡入淡出"></a>jQuery 淡入淡出</h3><ul>
-<li><p>fadeIn()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div1"</span>).fadeIn();</div><div class="line">  $(<span class="string">"#div2"</span>).fadeIn(<span class="string">"slow"</span>);</div><div class="line">  $(<span class="string">"#div3"</span>).fadeIn(<span class="number">3000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_fadein" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><p>fadeOut()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div1"</span>).fadeOut();</div><div class="line">  $(<span class="string">"#div2"</span>).fadeOut(<span class="string">"slow"</span>);</div><div class="line">  $(<span class="string">"#div3"</span>).fadeOut(<span class="number">3000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_fadeout" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><p>fadeToggle()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div1"</span>).fadeToggle();</div><div class="line">  $(<span class="string">"#div2"</span>).fadeToggle(<span class="string">"slow"</span>);</div><div class="line">  $(<span class="string">"#div3"</span>).fadeToggle(<span class="number">3000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_fadetoggle" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-<li><p>fadeTo()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#div1"</span>).fadeTo(<span class="string">"slow"</span>,<span class="number">0.15</span>);</div><div class="line">  $(<span class="string">"#div2"</span>).fadeTo(<span class="string">"slow"</span>,<span class="number">0.4</span>);</div><div class="line">  $(<span class="string">"#div3"</span>).fadeTo(<span class="string">"slow"</span>,<span class="number">0.7</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_fadeto" target="_blank" rel="external">亲自试一试</a></p>
-</li>
-</ul>
-</li>
-<li><h3 id="jQuery-滑动"><a href="#jQuery-滑动" class="headerlink" title="jQuery 滑动"></a>jQuery 滑动</h3><ul>
-<li>slideDown()</li>
-<li>slideUp()</li>
-<li>slideToggle()</li>
-</ul>
-<p>​</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>  ​</p>
-
+<p><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_dom_html_set">亲自试一试</a></p>
+        
+          <a class="article-more-a" href="/2017/04/26/web/jQuery的使用/#more">more >></a>
+        
       
 
       
@@ -782,77 +705,9 @@
 <p>如图</p>
 <p><img src="/uploads/images/Snip20170328_4.png" alt=""></p>
 <p>常用语言对应表</p>
-<table>
-<thead>
-<tr>
-<th>语言</th>
-<th>对应代码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bash</td>
-<td>bash,sh,zsh</td>
-</tr>
-<tr>
-<td>C#</td>
-<td>cs,csharp</td>
-</tr>
-<tr>
-<td>C++</td>
-<td>cpp,c,cc,h,c++,h++,hop</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>css</td>
-</tr>
-<tr>
-<td>DOS</td>
-<td>dos,bat,cmd</td>
-</tr>
-<tr>
-<td>HTML,XML</td>
-<td>xml,html,xhtml,rss,atom,xjb,xsd,ssl,plist</td>
-</tr>
-<tr>
-<td>JSON</td>
-<td>json</td>
-</tr>
-<tr>
-<td>java</td>
-<td>java</td>
-</tr>
-<tr>
-<td>JavaScript</td>
-<td>javascript, js, jsx</td>
-</tr>
-<tr>
-<td>Objective-C</td>
-<td>objectivec, mm, objc, obj-c</td>
-</tr>
-<tr>
-<td>PHP</td>
-<td>php, php3, php4, php5, php6</td>
-</tr>
-<tr>
-<td>Ruby</td>
-<td>ruby, rb, gemspec, podspec, thor, irb</td>
-</tr>
-<tr>
-<td>SQL</td>
-<td>sql</td>
-</tr>
-<tr>
-<td>Swift</td>
-<td>swift</td>
-</tr>
-<tr>
-<td>VB.Net</td>
-<td>vbnet, vb</td>
-</tr>
-</tbody>
-</table>
-
+        
+          <a class="article-more-a" href="/2017/03/07/other/hexo主题代码怎么高亮显示/#more">more >></a>
+        
       
 
       
@@ -951,21 +806,9 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $obj = $("#id"); //jQuery对象;</div></pre></td></tr></table></figure>
 <p>jQuery对象就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法，例:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$("#foo").html(); //获取id为foo的元素内的html代码，html()是jQuery特有的方法;</div></pre></td></tr></table></figure>
-<p>上面的那段代码等同于:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementById("foo").innerHTML;</div></pre></td></tr></table></figure>
-<p>注意：在jQuery对象中无法使用DOM对象的任何方法。</p>
-<p>例如<code>$(&quot;#id&quot;).innerHTML</code>和<code>$(&quot;#id&quot;).checked</code>之类的写法都是错误的，可以用<code>$(&quot;#id&quot;).html()</code>和<code>$(&quot;#id&quot;).attr (&quot;checked&quot;)</code>之类的jQuery方法来代替。同样，DOM对象也不能使用jQuery方法。</p>
-<h2 id="jQuery对象和DOM对象的互相转换"><a href="#jQuery对象和DOM对象的互相转换" class="headerlink" title="jQuery对象和DOM对象的互相转换"></a>jQuery对象和DOM对象的互相转换</h2><h3 id="jquery对象转换成-dom对象"><a href="#jquery对象转换成-dom对象" class="headerlink" title="jquery对象转换成 dom对象"></a>jquery对象转换成 dom对象</h3><p>jquery提供了两种方法将一个jquery对象转换成一个dom对象，即[index]和get(index)。可能有人会觉得奇怪，怎么是用下标呢，没错，jquery对象就是一个数组对象.</p>
-<p>下面代码将演示一个jquery对象转换成dom对象，再使用dom对象的方法</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $cr=$("#cr"); //jquery对象</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var cr = $cr[0]; //dom对象 也可写成 var cr=$cr.get(0);</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(cr.checked); //检测这个checkbox是否给选中</div></pre></td></tr></table></figure>
-<h3 id="dom对象转换成jquery对象"><a href="#dom对象转换成jquery对象" class="headerlink" title="dom对象转换成jquery对象"></a>dom对象转换成jquery对象</h3><p>对于一个dom对象，只需要用$()把dom对象包装起来，就可以获得一个jquery对象了，方法为$(dom对象);</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var cr=document.getElementById("cr"); //dom对象</div></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var $cr = $(cr); //转换成jquery对象</div></pre></td></tr></table></figure>
-<p>转换后可以任意使用jquery中的方法了.</p>
-<p>通过以上的方法，可以任意的相互转换jquery对象和dom对象.</p>
-
+        
+          <a class="article-more-a" href="/2017/03/05/web/DOM对象与jquery对象有什么不同/#more">more >></a>
+        
       
 
       
