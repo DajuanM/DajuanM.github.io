@@ -21,7 +21,7 @@ github下载地址：DHDragableCellTableView
 使用将tableView继承与DHDragableCellTableView并遵循协议DHDragableCellTableViewDataSource,DHDragableCellTableViewDelegate
 123456789#pragma mark - DHDragableCellTableViewData">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1353091-0b8cce0d40bd6389.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-06-12T14:09:28.000Z">
+<meta property="og:updated_time" content="2017-06-12T15:43:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITableView长按拖动排序（支持不同行高间交换）">
 <meta name="twitter:description" content="效果图：
@@ -244,6 +244,7 @@ github下载地址：DHDragableCellTableView
 <p>github下载地址：<a href="https://github.com/DajuanM/DHDragableCellTableView" target="_blank" rel="external">DHDragableCellTableView</a></p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>将tableView继承与DHDragableCellTableView并遵循协议DHDragableCellTableViewDataSource,DHDragableCellTableViewDelegate</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - DHDragableCellTableViewDataSource</span></div><div class="line">- (<span class="built_in">NSArray</span> *)dataSourceArrayInTableView:(DHDragableCellTableView *)tableView&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>.dataSource.copy;<span class="comment">//数据源</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)tableView:(DHDragableCellTableView *)tableView newDataSourceArrayAfterMove:(<span class="built_in">NSArray</span> *)newDataSourceArray&#123;</div><div class="line">    <span class="keyword">self</span>.dataSource = newDataSourceArray.mutableCopy;<span class="comment">//返回的数据源</span></div><div class="line">    [<span class="keyword">self</span>.tableView reloadData];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h3><p>大概思路，为UITableView添加长按手势，长按后给选择的cell截图并隐藏选择的cell,让截图跟随手势移动</p>
 <ol>
 <li>添加手势</li>
