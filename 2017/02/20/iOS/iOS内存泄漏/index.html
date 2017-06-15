@@ -6,14 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: other | 浮浮沉沉丶</title>
+  <title>iOS中内存泄漏调试 | 浮浮沉沉丶</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="浮浮沉沉丶">
-<meta property="og:url" content="http://yoursite.com/categories/other/index.html">
+  <meta name="description" content="iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。
+1.运行程序让程序先跑起来
+2.进入Leak工具
+如上图，选中show the debug（箭头指的），然后点击Memory">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中内存泄漏调试">
+<meta property="og:url" content="http://yoursite.com/2017/02/20/iOS/iOS内存泄漏/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
+<meta property="og:description" content="iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。
+1.运行程序让程序先跑起来
+2.进入Leak工具
+如上图，选中show the debug（箭头指的），然后点击Memory">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-c11a7304ff9458be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-ea437d1c8cb1f46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-138db9e1d7656060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-b1a95814ee0709a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-db2e9d8fa4fc4697.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-7d70003c75bc1a2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-dec380e4444a5401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-2633f133d65974d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1903176-c65f6e8d94cf5da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
+<meta property="og:updated_time" content="2017-06-15T12:06:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浮浮沉沉丶">
+<meta name="twitter:title" content="iOS中内存泄漏调试">
+<meta name="twitter:description" content="iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。
+1.运行程序让程序先跑起来
+2.进入Leak工具
+如上图，选中show the debug（箭头指的），然后点击Memory">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1903176-c11a7304ff9458be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="浮浮沉沉丶" type="application/atom+xml">
   
@@ -151,71 +174,237 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-iOS/iOS内存泄漏" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/07/other/hexo主题代码怎么高亮显示/" class="archive-article-date">
-  	<time datetime="2017-03-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/07/other/hexo主题代码怎么高亮显示/">hexo主题代码怎么高亮显示</a>
+    <h1 class="article-title" itemprop="name">
+      iOS中内存泄漏调试
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+
+        <!-- 显示阅读和评论数 -->
+        
+        <br/>
+        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+        <span class="icon-sort"></span>
+        <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+        </span>
+        </a>
+        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:#ef7522;font-size:14px;">
+        <span class="icon-comment"></span>
+        <span class="join-text" style="color:#ef7522;font-size:14px;">评论数:</span>
+        <span class="join-count">0</span>次
+        </a>
+        
+
+
+
+        
+        <a href="/2017/02/20/iOS/iOS内存泄漏/" class="archive-article-date">
+  	<time datetime="2017-02-20T10:01:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-20</time>
+</a>
+        
+      </header>
+    
+
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iOS开发中，内存问题一直是个长久不变的问题。这不，项目间歇间，用xcode自带的Leak跑了一下程序，发现了几个内存泄漏的地方，都是平时自己没有注意到的，并做出相应改正。在这里记录下。</p>
+<h2 id="1-运行程序"><a href="#1-运行程序" class="headerlink" title="1.运行程序"></a>1.运行程序</h2><p>让程序先跑起来</p>
+<h2 id="2-进入Leak工具"><a href="#2-进入Leak工具" class="headerlink" title="2.进入Leak工具"></a>2.进入Leak工具</h2><p><img src="http://upload-images.jianshu.io/upload_images/1903176-c11a7304ff9458be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如上图，选中show the debug（箭头指的），然后点击Memory</p>
+<a id="more"></a>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-ea437d1c8cb1f46b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>然后点击profile in instruments,通过Leak重新运行程序(弹出框中选择Restart</p>
+<h2 id="3-操作Leak工具"><a href="#3-操作Leak工具" class="headerlink" title="3.操作Leak工具"></a>3.操作Leak工具</h2><p><img src="http://upload-images.jianshu.io/upload_images/1903176-138db9e1d7656060.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>如上图，此时程序在跑起来了，Leak Checks右边显示绿色的钩，表示当前没有内存泄漏，这时候我们就可以操作我的app了，跑起来吧，直到发现有红色的X，表示在这里有内存泄漏，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-b1a95814ee0709a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>点击红色X，选择Call Tree，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-db2e9d8fa4fc4697.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>这时候下面的列表会出来很多方法，但都是系统的，表示看不懂有木有啊。。。这时候点击右边中间的选项，然后勾选Call Tree下的Separate by Thread 和 Hide System Libraries，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-7d70003c75bc1a2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>然后再看左右，下面列表的方法就会变成了我们自己写的方法了，如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-dec380e4444a5401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在这里，有的人肯定会有疑问，为啥他的列表里的方法都是一些进制类的看不懂的，或者就是空白，这是因为Xcode编译项目后，我们会看到一个同名的 dSYM 文件，dSYM 是保存 16 进制函数地址映射信息的中转文件，我们调试的 symbols 都会包含在这个文件中，并且每次编译项目的时候都会生成一个新的 dSYM 文件。显示进制是因为我们的工程build settings 的问题，没有生成dSYM 文件，也就无法解析debug symbols。做法如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-2633f133d65974d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>在Build Options将Debug information Format选择dsYM，这里默认的可能是release下选择的，将debug下也选择就可以了。<br>然后重新从编译，重新运行，从第一步重新走一遍即可出来<br>最后双击列表中暴露出来的方法，会直接显示代码，神不神奇~</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1903176-c65f6e8d94cf5da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt=""></p>
+<p>利用这个调试方法，里里外外将我们程序跑一跑，将内存泄漏的地方都改过来，这样程序闪退的机率将会大大减小。</p>
+<p>关于product-&gt;analyze分析内存泄漏的问题<br>优点：分析速度快，并且可以对所有的代码进行内存分析<br>缺点：分析结果不一定准确（没有运行程序，根据代码的上下文语法结构）<br>所以最好还是用Leak工具进行动态运行检查。</p>
+<p>路漫漫其修远兮，吾将上下而求索，与君互勉。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/other/" class="article-tag-list-link color1">other</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/20/iOS/iOS内存泄漏/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/03/05/web/DOM对象与jquery对象有什么不同/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          DOM对象与jquery对象有什么不同
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/01/20/iOS/一行代码解决NavigationController多次push问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一行代码解决NavigationController多次push问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
+
+
+
+<!-- 网易云跟帖 -->
+
+<section class="duoshuo" id="comments">
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+var cloudTieConfig = {
+url: "",
+sourceId: "2017/02/20/iOS/iOS内存泄漏/",
+productKey: "13ca468959624c6384bc462fd2024a1b",
+target: "cloud-tie-wrapper"
+};
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+</section>
 
 
           </div>
@@ -250,10 +439,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
@@ -316,6 +505,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
@@ -329,6 +522,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
