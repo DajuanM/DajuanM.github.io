@@ -10,13 +10,6 @@
 
     
     <entry>
-      <title><![CDATA[Command /bin/sh failed with exit code 1]]></title>
-      <url>%2F2017%2F06%2F29%2FiOS%2FCommand-%3Abin%3Ash-failed-with-exit-code-1%2F</url>
-      <content type="text"></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[React Native环境搭建]]></title>
       <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
       <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>

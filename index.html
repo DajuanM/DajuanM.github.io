@@ -201,34 +201,9 @@
 </li>
 </ol>
 <p><img src="http://upload-images.jianshu.io/upload_images/1353091-62247e1370c9956e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9A84021B-8B80-4D0A-ACFE-C00EA1277034.png"></p>
-<ol>
-<li><p>创建.spec文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod spec create DHCalendarView</div></pre></td></tr></table></figure>
-</li>
-<li><p>打开DHCalendarView.podspec填写信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Pod::Spec.new do |s|</div><div class="line">s.name         = &quot;DHCalendarView&quot;</div><div class="line">s.version      = &quot;1.0.4&quot;</div><div class="line">s.summary      = &quot;日历&quot;</div><div class="line">s.description  = &lt;&lt;-DESC</div><div class="line">好用的日历</div><div class="line">DESC</div><div class="line">s.homepage     = &quot;https://github.com/DajuanM/DHCalendarView&quot;</div><div class="line">s.license      = &quot;MIT&quot;</div><div class="line">s.author       = &#123; &quot;Aiden&quot; =&gt; &quot;252289287@qq.com&quot; &#125;</div><div class="line">s.source       = &#123; :git =&gt; &quot;https://github.com/DajuanM/DHCalendarView.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;</div><div class="line">s.source_files  = &quot;DHCalendarView&quot;,&quot;DHCalendarView/**/*.&#123;h,m&#125;&quot;</div><div class="line">s.requires_arc = true</div><div class="line">s.ios.deployment_target = &apos;8.0&apos;</div><div class="line">end</div></pre></td></tr></table></figure>
-<p><strong>所有的符号必须要是英文符号，不然会报错</strong></p>
-<p>这中间可能会报一些错误，根据提示解决就好了</p>
-</li>
-<li><p>忽略警告</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod lib lint --allow-warnings</div></pre></td></tr></table></figure>
-</li>
-<li><p>验证文件是否编写正确</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod lib lint DHCalendarView.podspec</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建tag</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git tag &apos;1.0.4&apos;</div><div class="line">git push --tags</div></pre></td></tr></table></figure>
-</li>
-<li><p>把编写的文件告诉cocopods</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod trunk push DHCalendarView.podspec</div></pre></td></tr></table></figure>
-<p>出现以下信息就算成功了</p>
-</li>
-</ol>
-<p><img src="http://upload-images.jianshu.io/upload_images/1353091-ac79fcc8307c14fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="EA4DCC48-B246-47D5-ABB6-40FCEFC63707.png"></p>
-<p>   错误：<br><img src="http://upload-images.jianshu.io/upload_images/1353091-d1e584b49a64207c.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt=""></p>
-<pre><code>解决方法
-</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pod trunk push DHCalendarView.podspec --allow-warnings</div></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2017/07/10/iOS/将自己的库上传到cocopods/#more">more >></a>
+        
       
 
       
@@ -252,88 +227,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/10/iOS/将自己的库上传到cocopods/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-<!-- 网易云跟帖 -->
-
-
-  
-    <article id="post-iOS/Command-:bin:sh-failed-with-exit-code-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/29/iOS/Command-:bin:sh-failed-with-exit-code-1/">Command /bin/sh failed with exit code 1</a>
-    </h1>
-  
-
-
-        <!-- 显示阅读和评论数 -->
-        
-
-
-
-        
-        <a href="/2017/06/29/iOS/Command-:bin:sh-failed-with-exit-code-1/" class="archive-article-date">
-  	<time datetime="2017-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-29</time>
-</a>
-        
-      </header>
-    
-
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-
-
-
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React-Native</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/29/iOS/Command-:bin:sh-failed-with-exit-code-1/">展开全文 >></a>
         </p>
       
 
@@ -1047,9 +940,96 @@
 
 
   
+    <article id="post-iOS/Xcode打断点调试时所有的变量都为nil" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/">Xcode打断点调试时所有的变量都为nil</a>
+    </h1>
+  
+
+
+        <!-- 显示阅读和评论数 -->
+        
+
+
+
+        
+        <a href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/" class="archive-article-date">
+  	<time datetime="2017-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
+</a>
+        
+      </header>
+    
+
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天开发的时候打断点进行调试，结果控制台上显示的变量都是nil,例:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1353091-216e812b0cbd7271.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>解决办法，如图：</p>
+        
+          <a class="article-more-a" href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 网易云跟帖 -->
+
+
+  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1152,7 +1132,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1161,10 +1141,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AFNetworking</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
              
               <li class="article-tag-list-item">
