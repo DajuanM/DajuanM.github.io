@@ -10,9 +10,9 @@
 
     
     <entry>
-      <title><![CDATA[React Native环境搭建]]></title>
-      <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
-      <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>
+      <title><![CDATA[LeetCode-605. Can Place Flowers]]></title>
+      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-605-Can-Place-Flowers%2F</url>
+      <content type="text"><![CDATA[题目Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.Example 1:Input: flowerbed = [1,0,0,0,1], n = 1Output: True Example 2:Input: flowerbed = [1,0,0,0,1], n = 2Output: False Note:The input array won’t violate no-adjacent-flowers rule.The input array size is in the range of [1, 20000].n is a non-negative integer which won’t exceed the input array size. Subscribe to see which companies asked this question. 代码1234567891011121314func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -&gt; Bool &#123; var count: Int = 0 var arr = flowerbed for i in 0..&lt;arr.count &#123; if (arr[i] == 0 &amp;&amp; (i == 0 || arr[i - 1] == 0) &amp;&amp; (i == arr.count - 1 || arr[i + 1] == 0)) &#123; arr[i] = 1 count += 1 &#125; if count &gt;= n &#123; return true &#125; &#125; return false &#125;]]></content>
     </entry>
 
     
@@ -45,9 +45,9 @@
 
     
     <entry>
-      <title><![CDATA[LeetCode-605. Can Place Flowers]]></title>
-      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-605-Can-Place-Flowers%2F</url>
-      <content type="text"><![CDATA[题目Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.Example 1:Input: flowerbed = [1,0,0,0,1], n = 1Output: True Example 2:Input: flowerbed = [1,0,0,0,1], n = 2Output: False Note:The input array won’t violate no-adjacent-flowers rule.The input array size is in the range of [1, 20000].n is a non-negative integer which won’t exceed the input array size. Subscribe to see which companies asked this question. 代码1234567891011121314func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -&gt; Bool &#123; var count: Int = 0 var arr = flowerbed for i in 0..&lt;arr.count &#123; if (arr[i] == 0 &amp;&amp; (i == 0 || arr[i - 1] == 0) &amp;&amp; (i == arr.count - 1 || arr[i + 1] == 0)) &#123; arr[i] = 1 count += 1 &#125; if count &gt;= n &#123; return true &#125; &#125; return false &#125;]]></content>
+      <title><![CDATA[React Native环境搭建]]></title>
+      <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+      <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>
     </entry>
 
     
