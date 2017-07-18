@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/5 | 浮浮沉沉丶</title>
+  <title>浮浮沉沉丶</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="浮浮沉沉丶">
-<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="浮浮沉沉丶">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浮浮沉沉丶">
@@ -153,34 +153,51 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-iOS/Swift怎么通过类名字符串来创建一个类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/20/iOS/Swift怎么通过类名字符串来创建一个类/">Swift怎么通过类名字符串来创建一个类</a>
+    </h1>
+  
+
+
+        <!-- 显示阅读和评论数 -->
+        
+
+
+
+        
+        <a href="/2016/09/20/iOS/Swift怎么通过类名字符串来创建一个类/" class="archive-article-date">
+  	<time datetime="2016-09-20T03:26:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-20</time>
+</a>
+        
+      </header>
     
+
+
+    <!-- 目录内容 -->
     
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为"><a href="#OC中可以直接通过类名的字符串转换成对应的类来操作-但是Swift中必须用到命名空间-也就是说Swift中通过字符串获取类的方式为" class="headerlink" title="OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为"></a>OC中可以直接通过类名的字符串转换成对应的类来操作,但是Swift中必须用到命名空间,也就是说Swift中通过字符串获取类的方式为</h2><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">let namespace = <span class="built_in">NSBundle</span>.mainBundle().infoDictionary![<span class="string">"CFBundleExecutable"</span>]</div><div class="line"></div><div class="line">guard ((namespace as? String) != <span class="literal">nil</span>) <span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">return</span> </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">let modelClass : AnyClass? = <span class="built_in">NSClassFromString</span>((namespace as? String)!+<span class="string">"."</span>+modelClassStr)</div><div class="line"></div><div class="line">let baseModel  = modelClass?.alloc()</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/23/iOS/iOS开发输入框字数限制/" class="archive-article-date">
-  	<time datetime="2017-05-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/iOS/iOS开发输入框字数限制/">iOS开发输入框字数限制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -192,99 +209,37 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/09/20/iOS/Swift怎么通过类名字符串来创建一个类/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/" class="archive-article-date">
-  	<time datetime="2017-05-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/iOS/Xcode打断点调试时所有的变量都为nil/">Xcode打断点调试时所有的变量都为nil</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/" class="archive-article-date">
-  	<time datetime="2017-05-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/16/iOS/AFNetworking的requestSerializer跟responseSerializer/">AFNetworking的requestSerializer跟responseSerializer</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">AFNetworking</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+<!-- 网易云跟帖 -->
+
+
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
-
-    
 
 
           </div>
@@ -318,9 +273,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
