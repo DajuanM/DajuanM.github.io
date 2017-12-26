@@ -3,7 +3,7 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[git上传授权失败]]></title>
       <url>%2F2017%2F12%2F26%2Fother%2Fgit%E4%B8%8A%E4%BC%A0%E6%8E%88%E6%9D%83%E5%A4%B1%E8%B4%A5%2F</url>
       <content type="text"><![CDATA[今天在github上拉了代码修改后准备上传结果报错了: unable to access ‘https://github.com/DajuanM/DHAlgorithms.git/‘: The requested URL returned error: 403 网上查了下试了好几种都没解决掉,比如:修改是https连接模式改成ssh模式，修改代理.最后找到一个非常简单的解决方法. 首先进入工程目录下打开.git文件夹 打开config文件 把 url = https://github.com/DajuanM/DHSwiftDemo.git 改为: url = https://DajuanM@github.com/DajuanM/DHSwiftDemo.git ok, 在重新push成功了 随便提一下自己更新博客时也遇到了这个问题, 只需要把跟目录里的_config.yml文件的github地址和主题里的_config.yml文件的github地址跟上面一样的修改就好了.]]></content>
     </entry>
