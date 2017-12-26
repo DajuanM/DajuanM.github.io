@@ -153,6 +153,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-other/git上传授权失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在github上拉了代码修改后准备上传结果报错了:</p>
+<p>unable to access ‘<a href="https://github.com/DajuanM/DHAlgorithms.git/" target="_blank" rel="external">https://github.com/DajuanM/DHAlgorithms.git/</a>‘: The requested URL returned error: 403</p>
+<p>网上查了下试了好几种都没解决掉,比如:修改是https连接模式改成ssh模式，修改代理.最后找到一个非常简单的解决方法.</p>
+<ol>
+<li><p>首先进入工程目录下打开.git文件夹</p>
+</li>
+<li><p>打开config文件</p>
+</li>
+<li><p>把 url = <a href="https://github.com/DajuanM/DHSwiftDemo.git" target="_blank" rel="external">https://github.com/DajuanM/DHSwiftDemo.git</a></p>
+<p>改为: url = <a href="https://DajuanM@github.com/DajuanM/DHSwiftDemo.git" target="_blank" rel="external">https://DajuanM@github.com/DajuanM/DHSwiftDemo.git</a></p>
+</li>
+</ol>
+<p>ok, 在重新push成功了</p>
+<p>随便提一下自己更新博客时也遇到了这个问题, 只需要把跟目录里的_config.yml文件的github地址和主题里的_config.yml文件的github地址跟上面一样的修改就好了.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/26/other/git上传授权失败/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 网易云跟帖 -->
+
+
+  
     <article id="post-算法/Two-Sum" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -334,14 +398,14 @@
 
 
   
-    <article id="post-算法/LeetCode-605-Can-Place-Flowers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/">LeetCode-605. Can Place Flowers</a>
+      <a class="article-title" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/">LeetCode-581. Shortest Unsorted Continuous Subarray</a>
     </h1>
   
 
@@ -352,7 +416,7 @@
 
 
         
-        <a href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/" class="archive-article-date">
+        <a href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/" class="archive-article-date">
   	<time datetime="2017-06-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
 </a>
         
@@ -371,9 +435,9 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.<br>Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number <strong>n</strong>, return if <strong>n</strong> new flowers can be planted in it without violating the no-adjacent-flowers rule.<br><strong>Example 1:</strong><br><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 1<br><strong>Output:</strong> True</p>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an integer array, you need to find one <strong>continuous subarray</strong> that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.<br>You need to find the <strong>shortest</strong> such subarray and output its length.<br><strong>Example 1:</strong><br><strong>Input:</strong> [2, 6, 4, 8, 10, 9, 15]<br><strong>Output:</strong> 5<br><strong>Explanation:</strong> You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</p>
         
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/#more">more >></a>
         
       
 
@@ -397,95 +461,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-<!-- 网易云跟帖 -->
-
-
-  
-    <article id="post-React-Native/React-Native环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/React-Native/React-Native环境搭建/">React Native环境搭建</a>
-    </h1>
-  
-
-
-        <!-- 显示阅读和评论数 -->
-        
-
-
-
-        
-        <a href="/2017/06/15/React-Native/React-Native环境搭建/" class="archive-article-date">
-  	<time datetime="2017-06-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-
-
-
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>官网:<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
-<h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
-<h2 id="安装watchman"><a href="#安装watchman" class="headerlink" title="安装watchman"></a>安装watchman</h2><p><code>brew install watchman</code></p>
-<h2 id="安装flow"><a href="#安装flow" class="headerlink" title="安装flow"></a>安装flow</h2><p><code>brew install flow</code></p>
-        
-          <a class="article-more-a" href="/2017/06/15/React-Native/React-Native环境搭建/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React Native</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/React-Native/React-Native环境搭建/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/">展开全文 >></a>
         </p>
       
 
@@ -768,14 +744,14 @@
 
 
   
-    <article id="post-算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-React-Native/React-Native环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/">LeetCode-581. Shortest Unsorted Continuous Subarray</a>
+      <a class="article-title" href="/2017/06/15/React-Native/React-Native环境搭建/">React Native环境搭建</a>
     </h1>
   
 
@@ -786,7 +762,7 @@
 
 
         
-        <a href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/" class="archive-article-date">
+        <a href="/2017/06/15/React-Native/React-Native环境搭建/" class="archive-article-date">
   	<time datetime="2017-06-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
 </a>
         
@@ -805,9 +781,97 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an integer array, you need to find one <strong>continuous subarray</strong> that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.<br>You need to find the <strong>shortest</strong> such subarray and output its length.<br><strong>Example 1:</strong><br><strong>Input:</strong> [2, 6, 4, 8, 10, 9, 15]<br><strong>Output:</strong> 5<br><strong>Explanation:</strong> You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</p>
+        <h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>官网:<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+<h2 id="安装Homebrew"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew</h2><p><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+<h2 id="安装watchman"><a href="#安装watchman" class="headerlink" title="安装watchman"></a>安装watchman</h2><p><code>brew install watchman</code></p>
+<h2 id="安装flow"><a href="#安装flow" class="headerlink" title="安装flow"></a>安装flow</h2><p><code>brew install flow</code></p>
         
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/15/React-Native/React-Native环境搭建/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React Native</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/15/React-Native/React-Native环境搭建/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 网易云跟帖 -->
+
+
+  
+    <article id="post-算法/LeetCode-605-Can-Place-Flowers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/">LeetCode-605. Can Place Flowers</a>
+    </h1>
+  
+
+
+        <!-- 显示阅读和评论数 -->
+        
+
+
+
+        
+        <a href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/" class="archive-article-date">
+  	<time datetime="2017-06-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
+</a>
+        
+      </header>
+    
+
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.<br>Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number <strong>n</strong>, return if <strong>n</strong> new flowers can be planted in it without violating the no-adjacent-flowers rule.<br><strong>Example 1:</strong><br><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 1<br><strong>Output:</strong> True</p>
+        
+          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/#more">more >></a>
         
       
 
@@ -831,7 +895,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/">展开全文 >></a>
         </p>
       
 
@@ -920,91 +984,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/09/iOS/UITableView长按拖动排序（支持不同行高间交换）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-<!-- 网易云跟帖 -->
-
-
-  
-    <article id="post-iOS/iOS开发输入框字数限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/23/iOS/iOS开发输入框字数限制/">iOS开发输入框字数限制</a>
-    </h1>
-  
-
-
-        <!-- 显示阅读和评论数 -->
-        
-
-
-
-        
-        <a href="/2017/05/23/iOS/iOS开发输入框字数限制/" class="archive-article-date">
-  	<time datetime="2017-05-22T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
-</a>
-        
-      </header>
-    
-
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-
-
-
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在在网上查了资料，很多都是下面这个方法，但是在原生键盘上是有问题的，当当在手机上英文九宫格连点的时候，会替换掉最后的文字</p>
-        
-          <a class="article-more-a" href="/2017/05/23/iOS/iOS开发输入框字数限制/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/23/iOS/iOS开发输入框字数限制/">展开全文 >></a>
         </p>
       
 
