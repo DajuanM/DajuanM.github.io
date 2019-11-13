@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Mac关闭终端后设置环境变量失效]]></title>
-      <url>%2F2019%2F11%2F13%2Fpython%2FMac%E5%85%B3%E9%97%AD%E7%BB%88%E7%AB%AF%E5%90%8E%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%A4%B1%E6%95%88%2F</url>
+      <url>%2F2019%2F11%2F13%2Fother%2FMac%E5%85%B3%E9%97%AD%E7%BB%88%E7%AB%AF%E5%90%8E%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%A4%B1%E6%95%88%2F</url>
       <content type="text"><![CDATA[很多时候我们在设置环境变量的时候都是在bash_profile文件中导入，比如： 1export PATH=&quot;/Users/mac/opt/anaconda3/bin:$PATH 然后执行source ~/.bash_profile使生效 但是当我们关闭终端后再重新打开时又需要重新执行source ~/.bash_profile才能生效 这是因为系统当前使用的shell不是bash 查看当前使用的shell 1echo $SHELL 比如当前使用的是zsh，则输出 1/bin/zsh 查看当前系统支持的shell 1cat /etc/shells 解决方法 切换shell 1chsh -s /bin/bash 直接在.zshrc文件中添加环境变量，打开.zshrc文件 1open ~/.zshrc 也可以在.zshrc中添加以下 1source ~/.bash_profile]]></content>
     </entry>
 

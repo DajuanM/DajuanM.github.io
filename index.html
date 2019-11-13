@@ -153,14 +153,14 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-python/Mac关闭终端后设置环境变量失效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-other/Mac关闭终端后设置环境变量失效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/">Mac关闭终端后设置环境变量失效</a>
+      <a class="article-title" href="/2019/11/13/other/Mac关闭终端后设置环境变量失效/">Mac关闭终端后设置环境变量失效</a>
     </h1>
   
 
@@ -171,7 +171,7 @@
 
 
         
-        <a href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/" class="archive-article-date">
+        <a href="/2019/11/13/other/Mac关闭终端后设置环境变量失效/" class="archive-article-date">
   	<time datetime="2019-11-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
 </a>
         
@@ -193,9 +193,26 @@
         <p>很多时候我们在设置环境变量的时候都是在<code>bash_profile</code>文件中导入，比如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=&quot;/Users/mac/opt/anaconda3/bin:$PATH</div></pre></td></tr></table></figure>
 <p>然后执行<code>source ~/.bash_profile</code>使生效</p>
-        
-          <a class="article-more-a" href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/#more">more >></a>
-        
+<p>但是当我们关闭终端后再重新打开时又需要重新执行<code>source ~/.bash_profile</code>才能生效</p>
+<p>这是因为系统当前使用的shell不是bash</p>
+<p>查看当前使用的shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $SHELL</div></pre></td></tr></table></figure>
+<p>比如当前使用的是<code>zsh</code>，则输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/bin/zsh</div></pre></td></tr></table></figure>
+<p>查看当前系统支持的shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /etc/shells</div></pre></td></tr></table></figure>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ol>
+<li><p>切换shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/bash</div></pre></td></tr></table></figure>
+</li>
+<li><p>直接在.zshrc文件中添加环境变量，打开<code>.zshrc</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open ~/.zshrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>也可以在.zshrc中添加以下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/.bash_profile</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
 
       
@@ -208,7 +225,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">other</a>
         		</li>
       		
 		</ul>
@@ -218,7 +235,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/11/13/other/Mac关闭终端后设置环境变量失效/">展开全文 >></a>
         </p>
       
 
@@ -1167,10 +1184,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">AFNetworking</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
