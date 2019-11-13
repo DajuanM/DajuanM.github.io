@@ -153,6 +153,193 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python/Mac关闭终端后设置环境变量失效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/">Mac关闭终端后设置环境变量失效</a>
+    </h1>
+  
+
+
+        <!-- 显示阅读和评论数 -->
+        
+
+
+
+        
+        <a href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/" class="archive-article-date">
+  	<time datetime="2019-11-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
+</a>
+        
+      </header>
+    
+
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很多时候我们在设置环境变量的时候都是在<code>bash_profile</code>文件中导入，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export PATH=&quot;/Users/mac/opt/anaconda3/bin:$PATH</div></pre></td></tr></table></figure>
+<p>然后执行<code>source ~/.bash_profile</code>使生效</p>
+        
+          <a class="article-more-a" href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/13/python/Mac关闭终端后设置环境变量失效/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 网易云跟帖 -->
+
+
+  
+    <article id="post-iOS/苹果审核返回崩溃日志解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/24/iOS/苹果审核返回崩溃日志解析/">苹果审核返回崩溃日志解析</a>
+    </h1>
+  
+
+
+        <!-- 显示阅读和评论数 -->
+        
+
+
+
+        
+        <a href="/2019/10/24/iOS/苹果审核返回崩溃日志解析/" class="archive-article-date">
+  	<time datetime="2019-10-24T02:55:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
+</a>
+        
+      </header>
+    
+
+
+    <!-- 目录内容 -->
+    
+    <!-- 目录内容结束 -->
+
+
+
+
+
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>先新建一个文件夹，比如在桌面新建一个<code>crash</code>文件夹，然后通过finder前往以下路径    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/</div></pre></td></tr></table></figure>
+<p>拷贝<code>symbolicatecrash</code>文件到crash文件夹</p>
+</li>
+<li><p>进入Xcode-&gt;window-&gt;organizer-&gt;Archives 选择上传的包 右键 <code>Show in Finder</code> ，当前文件显示包内容-&gt;dSYMs，拷贝<code>AppName</code>.app.dSYM文件到<code>crash</code>文件夹</p>
+</li>
+<li><p>下载苹果审核返回的崩溃日志到<code>crash</code>文件夹,比如命名为<code>crash.txt</code></p>
+</li>
+<li><p>终端进入<code>crash</code>文件夹，输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./symbolicatecrash ./crash.txt ./`AppName`.app.dSYM &gt; crash.log</div></pre></td></tr></table></figure>
+<p>如何出现以下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: &quot;DEVELOPER_DIR&quot; is not defined at ./symbolicatecrash line 69.</div></pre></td></tr></table></figure>
+<p>添加环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export DEVELOPER_DIR=&quot;/Applications/XCode.app/Contents/Developer</div></pre></td></tr></table></figure>
+<p>再执行以上命令，再<code>crash</code>文件夹下生成了<code>crash.log</code>文件</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/24/iOS/苹果审核返回崩溃日志解析/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+<!-- 网易云跟帖 -->
+
+
+  
     <article id="post-iOS/iOS开发向服务器发送表情字符报错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -866,176 +1053,6 @@
 
 
   
-    <article id="post-算法/LeetCode-605-Can-Place-Flowers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/">LeetCode-605. Can Place Flowers</a>
-    </h1>
-  
-
-
-        <!-- 显示阅读和评论数 -->
-        
-
-
-
-        
-        <a href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/" class="archive-article-date">
-  	<time datetime="2017-06-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-
-
-
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.<br>Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number <strong>n</strong>, return if <strong>n</strong> new flowers can be planted in it without violating the no-adjacent-flowers rule.<br><strong>Example 1:</strong><br><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 1<br><strong>Output:</strong> True</p>
-        
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">算法题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-605-Can-Place-Flowers/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-<!-- 网易云跟帖 -->
-
-
-  
-    <article id="post-算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/">LeetCode-581. Shortest Unsorted Continuous Subarray</a>
-    </h1>
-  
-
-
-        <!-- 显示阅读和评论数 -->
-        
-
-
-
-        
-        <a href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/" class="archive-article-date">
-  	<time datetime="2017-06-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-
-
-    <!-- 目录内容 -->
-    
-    <!-- 目录内容结束 -->
-
-
-
-
-
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>Given an integer array, you need to find one <strong>continuous subarray</strong> that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.<br>You need to find the <strong>shortest</strong> such subarray and output its length.<br><strong>Example 1:</strong><br><strong>Input:</strong> [2, 6, 4, 8, 10, 9, 15]<br><strong>Output:</strong> 5<br><strong>Explanation:</strong> You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.</p>
-        
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">算法题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/15/算法/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-<!-- 网易云跟帖 -->
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1141,6 +1158,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
@@ -1149,7 +1170,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
