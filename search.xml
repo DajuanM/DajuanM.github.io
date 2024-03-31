@@ -10,9 +10,9 @@
 
     
     <entry>
-      <title><![CDATA[React Native环境搭建]]></title>
-      <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
-      <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>
+      <title><![CDATA[LeetCode-485. Max Consecutive Ones]]></title>
+      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-485-Max-Consecutive-Ones%2F</url>
+      <content type="text"><![CDATA[Given a binary array, find the maximum number of consecutive 1s in this array. Example 1: 123Input: [1,1,0,1,1,1]Output: 3Explanation: The first two digits or the last three digits are consecutive 1s.The maximum number of consecutive 1s is 3. Note:** The input array will only contain 0 and 1. The length of input array is a positive integer and will not exceed 10,000 Subscribe to see which companies asked this question. 12345678910111213141516func findMaxConsecutiveOnes(_ nums: [Int]) -&gt; Int &#123; var count = 0,maxCount = 0 var i = 0 while i &lt; nums.count &#123; while i &lt; nums.count &amp;&amp; nums[i] == 1&#123; count += 1 i += 1 &#125; if count &gt; maxCount &#123; maxCount = count &#125; count = 0 i += 1 &#125; return maxCount&#125;]]></content>
     </entry>
 
     
@@ -31,9 +31,9 @@
 
     
     <entry>
-      <title><![CDATA[LeetCode-485. Max Consecutive Ones]]></title>
-      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-485-Max-Consecutive-Ones%2F</url>
-      <content type="text"><![CDATA[Given a binary array, find the maximum number of consecutive 1s in this array. Example 1: 123Input: [1,1,0,1,1,1]Output: 3Explanation: The first two digits or the last three digits are consecutive 1s.The maximum number of consecutive 1s is 3. Note:** The input array will only contain 0 and 1. The length of input array is a positive integer and will not exceed 10,000 Subscribe to see which companies asked this question. 12345678910111213141516func findMaxConsecutiveOnes(_ nums: [Int]) -&gt; Int &#123; var count = 0,maxCount = 0 var i = 0 while i &lt; nums.count &#123; while i &lt; nums.count &amp;&amp; nums[i] == 1&#123; count += 1 i += 1 &#125; if count &gt; maxCount &#123; maxCount = count &#125; count = 0 i += 1 &#125; return maxCount&#125;]]></content>
+      <title><![CDATA[LeetCode-581. Shortest Unsorted Continuous Subarray]]></title>
+      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-581-Shortest-Unsorted-Continuous-Subarray%2F</url>
+      <content type="text"><![CDATA[题目Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.You need to find the shortest such subarray and output its length.Example 1:Input: [2, 6, 4, 8, 10, 9, 15]Output: 5Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order. Note:Then length of the input array is in range [1, 10,000].The input array may contain duplicates, so ascending order here means &lt;=. Subscribe to see which companies asked this question. 代码1234567891011121314func findUnsortedSubarray(_ nums: [Int]) -&gt; Int &#123; var arr = nums arr.sort() var start = 0 var end = nums.count - 1 while start &lt; nums.count &amp;&amp; nums[start] == arr[start] &#123; start += 1 &#125; while end &gt; start &amp;&amp; nums[end] == arr[end] &#123; end -= 1 &#125; return end - start + 1&#125;]]></content>
     </entry>
 
     
@@ -45,9 +45,9 @@
 
     
     <entry>
-      <title><![CDATA[LeetCode-581. Shortest Unsorted Continuous Subarray]]></title>
-      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-581-Shortest-Unsorted-Continuous-Subarray%2F</url>
-      <content type="text"><![CDATA[题目Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.You need to find the shortest such subarray and output its length.Example 1:Input: [2, 6, 4, 8, 10, 9, 15]Output: 5Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order. Note:Then length of the input array is in range [1, 10,000].The input array may contain duplicates, so ascending order here means &lt;=. Subscribe to see which companies asked this question. 代码1234567891011121314func findUnsortedSubarray(_ nums: [Int]) -&gt; Int &#123; var arr = nums arr.sort() var start = 0 var end = nums.count - 1 while start &lt; nums.count &amp;&amp; nums[start] == arr[start] &#123; start += 1 &#125; while end &gt; start &amp;&amp; nums[end] == arr[end] &#123; end -= 1 &#125; return end - start + 1&#125;]]></content>
+      <title><![CDATA[React Native环境搭建]]></title>
+      <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+      <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>
     </entry>
 
     
