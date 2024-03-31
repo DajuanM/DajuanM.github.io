@@ -10,9 +10,9 @@
 
     
     <entry>
-      <title><![CDATA[LeetCode-605. Can Place Flowers]]></title>
-      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-605-Can-Place-Flowers%2F</url>
-      <content type="text"><![CDATA[题目Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.Example 1:Input: flowerbed = [1,0,0,0,1], n = 1Output: True Example 2:Input: flowerbed = [1,0,0,0,1], n = 2Output: False Note:The input array won’t violate no-adjacent-flowers rule.The input array size is in the range of [1, 20000].n is a non-negative integer which won’t exceed the input array size. Subscribe to see which companies asked this question. 代码1234567891011121314func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -&gt; Bool &#123; var count: Int = 0 var arr = flowerbed for i in 0..&lt;arr.count &#123; if (arr[i] == 0 &amp;&amp; (i == 0 || arr[i - 1] == 0) &amp;&amp; (i == arr.count - 1 || arr[i + 1] == 0)) &#123; arr[i] = 1 count += 1 &#125; if count &gt;= n &#123; return true &#125; &#125; return false &#125;]]></content>
+      <title><![CDATA[React Native环境搭建]]></title>
+      <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+      <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>
     </entry>
 
     
@@ -31,6 +31,13 @@
 
     
     <entry>
+      <title><![CDATA[LeetCode-605. Can Place Flowers]]></title>
+      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-605-Can-Place-Flowers%2F</url>
+      <content type="text"><![CDATA[题目Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.Example 1:Input: flowerbed = [1,0,0,0,1], n = 1Output: True Example 2:Input: flowerbed = [1,0,0,0,1], n = 2Output: False Note:The input array won’t violate no-adjacent-flowers rule.The input array size is in the range of [1, 20000].n is a non-negative integer which won’t exceed the input array size. Subscribe to see which companies asked this question. 代码1234567891011121314func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -&gt; Bool &#123; var count: Int = 0 var arr = flowerbed for i in 0..&lt;arr.count &#123; if (arr[i] == 0 &amp;&amp; (i == 0 || arr[i - 1] == 0) &amp;&amp; (i == arr.count - 1 || arr[i + 1] == 0)) &#123; arr[i] = 1 count += 1 &#125; if count &gt;= n &#123; return true &#125; &#125; return false &#125;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[LeetCode-561 Array Partition I]]></title>
       <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-561-Array-Partition-I%2F</url>
       <content type="text"><![CDATA[题目Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), …, (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.Example 1:Input: [1,4,3,2]Output: 4Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4). Note:n is a positive integer, which is in the range of [1, 10000].All the integers in the array will be in the range of [-10000, 10000]. Subscribe to see which companies asked this question. 代码1234567891011121314func arrayPairSum(_ nums: [Int]) -&gt; Int &#123; guard nums.count % 2 == 0 else &#123; return 0 &#125; var arr = nums arr.sort() var sum = 0 for i in 0..&lt;arr.count &#123; if i % 2 == 0 &#123; sum += arr[i] &#125; &#125; return sum&#125;]]></content>
@@ -41,13 +48,6 @@
       <title><![CDATA[LeetCode-485. Max Consecutive Ones]]></title>
       <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-485-Max-Consecutive-Ones%2F</url>
       <content type="text"><![CDATA[Given a binary array, find the maximum number of consecutive 1s in this array. Example 1: 123Input: [1,1,0,1,1,1]Output: 3Explanation: The first two digits or the last three digits are consecutive 1s.The maximum number of consecutive 1s is 3. Note:** The input array will only contain 0 and 1. The length of input array is a positive integer and will not exceed 10,000 Subscribe to see which companies asked this question. 12345678910111213141516func findMaxConsecutiveOnes(_ nums: [Int]) -&gt; Int &#123; var count = 0,maxCount = 0 var i = 0 while i &lt; nums.count &#123; while i &lt; nums.count &amp;&amp; nums[i] == 1&#123; count += 1 i += 1 &#125; if count &gt; maxCount &#123; maxCount = count &#125; count = 0 i += 1 &#125; return maxCount&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[React Native环境搭建]]></title>
-      <url>%2F2017%2F06%2F15%2FReact-Native%2FReact-Native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
-      <content type="text"><![CDATA[安装Node.js官网:https://nodejs.org/en/ 安装Homebrewruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 安装watchmanbrew install watchman 安装flowbrew install flow 安装nvmbrew install nvm 安装React Native命令行工具npm install -g react-native-cli 创建React Native项目 cd 项目存放文件夹 react-native init 项目名 react-native run-ios / react-native run-andriod 代码提示https://github.com/virtoolswebplayer/ReactNative-LiveTemplate]]></content>
     </entry>
 
     
@@ -90,13 +90,6 @@
       <title><![CDATA[hexo主题代码怎么高亮显示]]></title>
       <url>%2F2017%2F03%2F07%2Fother%2Fhexo%E4%B8%BB%E9%A2%98%E4%BB%A3%E7%A0%81%E6%80%8E%E4%B9%88%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%2F</url>
       <content type="text"><![CDATA[看到很多人跟我一样在按照hexo主题官方文档配置后，结果代码还是不能高亮显示。觉得将它记录下来希望能帮助到刚喜欢用博客来记录东西的朋友。 代码块需要用到两个```,在第一个后面需要加上代码的语言 如图 常用语言对应表 语言 对应代码 Bash bash,sh,zsh C# cs,csharp C++ cpp,c,cc,h,c++,h++,hop CSS css DOS dos,bat,cmd HTML,XML xml,html,xhtml,rss,atom,xjb,xsd,ssl,plist JSON json java java JavaScript javascript, js, jsx Objective-C objectivec, mm, objc, obj-c PHP php, php3, php4, php5, php6 Ruby ruby, rb, gemspec, podspec, thor, irb SQL sql Swift swift VB.Net vbnet, vb]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[DOM对象与jquery对象有什么不同]]></title>
-      <url>%2F2017%2F03%2F05%2Fweb%2FDOM%E5%AF%B9%E8%B1%A1%E4%B8%8Ejquery%E5%AF%B9%E8%B1%A1%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%2F</url>
-      <content type="text"><![CDATA[jQuery对象和DOM对象第一次学习jQuery,经常分辨不清哪些是jQuery对象，哪些是 DOM对象，因此需要重点了解jQuery对象和DOM对象以及它们之间的关系. DOM对象，即是我们用传统的方法(javascript)获得的对象，jQuery对象即是用jQuery类库的选择器获得的对象; 1var domObj = document.getElementById("id"); //DOM对象 1var $obj = $("#id"); //jQuery对象; jQuery对象就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法，例: 1$("#foo").html(); //获取id为foo的元素内的html代码，html()是jQuery特有的方法; 上面的那段代码等同于: 1document.getElementById("foo").innerHTML; 注意：在jQuery对象中无法使用DOM对象的任何方法。 例如$(&quot;#id&quot;).innerHTML和$(&quot;#id&quot;).checked之类的写法都是错误的，可以用$(&quot;#id&quot;).html()和$(&quot;#id&quot;).attr (&quot;checked&quot;)之类的jQuery方法来代替。同样，DOM对象也不能使用jQuery方法。 jQuery对象和DOM对象的互相转换jquery对象转换成 dom对象jquery提供了两种方法将一个jquery对象转换成一个dom对象，即[index]和get(index)。可能有人会觉得奇怪，怎么是用下标呢，没错，jquery对象就是一个数组对象. 下面代码将演示一个jquery对象转换成dom对象，再使用dom对象的方法 1var $cr=$("#cr"); //jquery对象 1var cr = $cr[0]; //dom对象 也可写成 var cr=$cr.get(0); 1alert(cr.checked); //检测这个checkbox是否给选中 dom对象转换成jquery对象对于一个dom对象，只需要用$()把dom对象包装起来，就可以获得一个jquery对象了，方法为$(dom对象); 1var cr=document.getElementById("cr"); //dom对象 1var $cr = $(cr); //转换成jquery对象 转换后可以任意使用jquery中的方法了. 通过以上的方法，可以任意的相互转换jquery对象和dom对象.]]></content>
     </entry>
 
     
