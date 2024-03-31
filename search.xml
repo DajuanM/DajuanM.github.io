@@ -17,23 +17,9 @@
 
     
     <entry>
-      <title><![CDATA[LeetCode-581. Shortest Unsorted Continuous Subarray]]></title>
-      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-581-Shortest-Unsorted-Continuous-Subarray%2F</url>
-      <content type="text"><![CDATA[题目Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.You need to find the shortest such subarray and output its length.Example 1:Input: [2, 6, 4, 8, 10, 9, 15]Output: 5Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order. Note:Then length of the input array is in range [1, 10,000].The input array may contain duplicates, so ascending order here means &lt;=. Subscribe to see which companies asked this question. 代码1234567891011121314func findUnsortedSubarray(_ nums: [Int]) -&gt; Int &#123; var arr = nums arr.sort() var start = 0 var end = nums.count - 1 while start &lt; nums.count &amp;&amp; nums[start] == arr[start] &#123; start += 1 &#125; while end &gt; start &amp;&amp; nums[end] == arr[end] &#123; end -= 1 &#125; return end - start + 1&#125;]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[LeetCode-485. Max Consecutive Ones]]></title>
       <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-485-Max-Consecutive-Ones%2F</url>
       <content type="text"><![CDATA[Given a binary array, find the maximum number of consecutive 1s in this array. Example 1: 123Input: [1,1,0,1,1,1]Output: 3Explanation: The first two digits or the last three digits are consecutive 1s.The maximum number of consecutive 1s is 3. Note:** The input array will only contain 0 and 1. The length of input array is a positive integer and will not exceed 10,000 Subscribe to see which companies asked this question. 12345678910111213141516func findMaxConsecutiveOnes(_ nums: [Int]) -&gt; Int &#123; var count = 0,maxCount = 0 var i = 0 while i &lt; nums.count &#123; while i &lt; nums.count &amp;&amp; nums[i] == 1&#123; count += 1 i += 1 &#125; if count &gt; maxCount &#123; maxCount = count &#125; count = 0 i += 1 &#125; return maxCount&#125;]]></content>
-    </entry>
-
-    
-    <entry>
-      <title><![CDATA[LeetCode-566 Reshape the Matrix]]></title>
-      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-566-Reshape-the-Matrix%2F</url>
-      <content type="text"><![CDATA[题目In MATLAB, there is a very useful function called ‘reshape’, which can reshape a matrix into a new one with different size but keep its original data. You’re given a matrix represented by a two-dimensional array, and two positive integers r and c representing the row number and column number of the wanted reshaped matrix, respectively. The reshaped matrix need to be filled with all the elements of the original matrix in the same row-traversing order as they were. If the ‘reshape’ operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix. Example 1:Input: nums = [[1,2], [3,4]]r = 1, c = 4Output: [[1,2,3,4]]Explanation:The row-traversing of nums is [1,2,3,4]. The new reshaped matrix is a 1 * 4 matrix, fill it row by row by using the previous list. Example 2:Input: nums = [[1,2], [3,4]]r = 2, c = 4Output: [[1,2], [3,4]]Explanation:There is no way to reshape a 2 2 matrix to a 2 4 matrix. So output the original matrix. Note:The height and width of the given matrix is in range [1, 100].The given r and c are all positive. Subscribe to see which companies asked this question. 代码123456789101112131415func matrixReshape(_ nums: [[Int]], _ r: Int, _ c: Int) -&gt; [[Int]] &#123; var tmp: [Int] = nums.flatMap&#123;$0&#125; guard tmp.count % (r * c) == 0 else &#123; return nums &#125; var arr: [[Int]] = [] for i in 0..&lt;r &#123; var t: [Int] = [] for j in 0..&lt;c &#123; t.append(tmp[i*c+j]) &#125; arr.append(t) &#125; return arr&#125;]]></content>
     </entry>
 
     
@@ -48,6 +34,20 @@
       <title><![CDATA[LeetCode-605. Can Place Flowers]]></title>
       <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-605-Can-Place-Flowers%2F</url>
       <content type="text"><![CDATA[题目Suppose you have a long flowerbed in which some of the plots are planted and some are not. However, flowers cannot be planted in adjacent plots - they would compete for water and both would die.Given a flowerbed (represented as an array containing 0 and 1, where 0 means empty and 1 means not empty), and a number n, return if n new flowers can be planted in it without violating the no-adjacent-flowers rule.Example 1:Input: flowerbed = [1,0,0,0,1], n = 1Output: True Example 2:Input: flowerbed = [1,0,0,0,1], n = 2Output: False Note:The input array won’t violate no-adjacent-flowers rule.The input array size is in the range of [1, 20000].n is a non-negative integer which won’t exceed the input array size. Subscribe to see which companies asked this question. 代码1234567891011121314func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -&gt; Bool &#123; var count: Int = 0 var arr = flowerbed for i in 0..&lt;arr.count &#123; if (arr[i] == 0 &amp;&amp; (i == 0 || arr[i - 1] == 0) &amp;&amp; (i == arr.count - 1 || arr[i + 1] == 0)) &#123; arr[i] = 1 count += 1 &#125; if count &gt;= n &#123; return true &#125; &#125; return false &#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[LeetCode-581. Shortest Unsorted Continuous Subarray]]></title>
+      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-581-Shortest-Unsorted-Continuous-Subarray%2F</url>
+      <content type="text"><![CDATA[题目Given an integer array, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order, too.You need to find the shortest such subarray and output its length.Example 1:Input: [2, 6, 4, 8, 10, 9, 15]Output: 5Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order. Note:Then length of the input array is in range [1, 10,000].The input array may contain duplicates, so ascending order here means &lt;=. Subscribe to see which companies asked this question. 代码1234567891011121314func findUnsortedSubarray(_ nums: [Int]) -&gt; Int &#123; var arr = nums arr.sort() var start = 0 var end = nums.count - 1 while start &lt; nums.count &amp;&amp; nums[start] == arr[start] &#123; start += 1 &#125; while end &gt; start &amp;&amp; nums[end] == arr[end] &#123; end -= 1 &#125; return end - start + 1&#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[LeetCode-566 Reshape the Matrix]]></title>
+      <url>%2F2017%2F06%2F15%2F%E7%AE%97%E6%B3%95%2FLeetCode-566-Reshape-the-Matrix%2F</url>
+      <content type="text"><![CDATA[题目In MATLAB, there is a very useful function called ‘reshape’, which can reshape a matrix into a new one with different size but keep its original data. You’re given a matrix represented by a two-dimensional array, and two positive integers r and c representing the row number and column number of the wanted reshaped matrix, respectively. The reshaped matrix need to be filled with all the elements of the original matrix in the same row-traversing order as they were. If the ‘reshape’ operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix. Example 1:Input: nums = [[1,2], [3,4]]r = 1, c = 4Output: [[1,2,3,4]]Explanation:The row-traversing of nums is [1,2,3,4]. The new reshaped matrix is a 1 * 4 matrix, fill it row by row by using the previous list. Example 2:Input: nums = [[1,2], [3,4]]r = 2, c = 4Output: [[1,2], [3,4]]Explanation:There is no way to reshape a 2 2 matrix to a 2 4 matrix. So output the original matrix. Note:The height and width of the given matrix is in range [1, 100].The given r and c are all positive. Subscribe to see which companies asked this question. 代码123456789101112131415func matrixReshape(_ nums: [[Int]], _ r: Int, _ c: Int) -&gt; [[Int]] &#123; var tmp: [Int] = nums.flatMap&#123;$0&#125; guard tmp.count % (r * c) == 0 else &#123; return nums &#125; var arr: [[Int]] = [] for i in 0..&lt;r &#123; var t: [Int] = [] for j in 0..&lt;c &#123; t.append(tmp[i*c+j]) &#125; arr.append(t) &#125; return arr&#125;]]></content>
     </entry>
 
     
